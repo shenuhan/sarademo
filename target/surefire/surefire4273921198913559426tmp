@@ -1,6 +1,0 @@
-#surefire
-#Fri Feb 05 20:12:47 CET 2016
-user.dir=/home/elojean/jean/demo
-tapestry.execution-mode=Qa
-localRepository=/home/elojean/.m2/repository
-basedir=/home/elojean/jean/demo
