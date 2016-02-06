@@ -1,22 +1,18 @@
 package fr.jean.sara.pages;
 
 
+import java.util.Date;
+
 import org.apache.tapestry5.Block;
 import org.apache.tapestry5.EventContext;
-import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.annotations.Import;
-import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Log;
-import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.ioc.annotations.Symbol;
 import org.apache.tapestry5.services.HttpError;
 import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
 import org.apache.tapestry5.services.ajax.JavaScriptCallback;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.slf4j.Logger;
-
-import java.util.Date;
 
 /**
  * Start page of application demo.
@@ -53,16 +49,17 @@ public class Index
   }
 
   @Log
-  void onAjax()
+  Object onAjax()
   {
     logger.info("Ajax call on Index page");
-    ajaxResponseRenderer.addRender("modalzone", modalblock);
-    ajaxResponseRenderer.addCallback(new JavaScriptCallback() {
-		@Override
-		public void run(JavaScriptSupport arg0) {
-		    javaScriptSupport.require("modal/modal").invoke("activate").with("identi");;
-		}
-	});
+//    ajaxResponseRenderer.addRender("modalzone", modalblock);
+//    ajaxResponseRenderer.addCallback(new JavaScriptCallback() {
+//		@Override
+//		public void run(JavaScriptSupport arg0) {
+//		    javaScriptSupport.require("modal/modal").invoke("activate").with("identi");;
+//		}
+//	});
+    return modalblock;
   }
 
   public Date getCurrentTime()
