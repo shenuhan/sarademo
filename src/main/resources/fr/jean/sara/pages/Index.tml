@@ -10,10 +10,6 @@
 	<t:zone t:id="modalzone" class="span4">
 	</t:zone> 
 	<t:block t:id="modalblock">
-		<t:dialog t:id="test" t:title="My Dialog">
-			<p:content>
-				He oui
-			</p:content>
-		</t:dialog>
+		<t:phoneHistoryDialog></t:phoneHistoryDialog>
 	</t:block> 
 </html>
