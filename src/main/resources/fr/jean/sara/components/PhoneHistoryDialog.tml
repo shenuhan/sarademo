@@ -1,0 +1,18 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+			 xmlns:p="tapestry:parameter">
+	<t:dialog t:id="phoneHistoryDialog" t:title="Historique des appels">
+		<p:content>
+			<div class="table">
+				<div class="row call-form">
+					<t:beaneditform object="call"/>
+					<!-- 
+					<t:errors/>
+					<t:textfield t:id="call.callee" validate="required"/>
+					<t:textfield t:id="call.phoneNumber" validate="regexp"/>
+					<t:datefield t:id="call.date" validate="required"/>
+					-->
+				</div>
+			</div>
+		</p:content>
+	</t:dialog>
+</t:container>
