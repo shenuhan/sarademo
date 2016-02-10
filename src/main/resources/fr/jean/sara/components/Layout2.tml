@@ -69,7 +69,8 @@ var bottomAccordion = new accordion('blocMenu');
 menuNiv2('9120','', '');
 
 }
-</script><!-- Selection du menu a positionner dans le bloc menu --><!-- Fil d'Ariane --><div class="blocFilAriane"><img alt="Consulter la page d'aide" class="lienAide" onclick="javascript:openHelp('AIDE_GEST_DEM','/Sara');" src="Layout_fichiers/picto_help_32x32.gif" title="Consulter la page d'aide"/><p class="texteFilAriane"><a href="https://sara.has-sante.fr/main/demarche/detaildemarche/editdem.compfilariane.redirection/0" id="redirection">Accueil</a>
+</script>
+<!-- Selection du menu a positionner dans le bloc menu --><!-- Fil d'Ariane --><div class="blocFilAriane"><img alt="Consulter la page d'aide" class="lienAide" onclick="javascript:openHelp('AIDE_GEST_DEM','/Sara');" src="Layout_fichiers/picto_help_32x32.gif" title="Consulter la page d'aide"/><p class="texteFilAriane"><a href="https://sara.has-sante.fr/main/demarche/detaildemarche/editdem.compfilariane.redirection/0" id="redirection">Accueil</a>
 &gt;
 <a href="https://sara.has-sante.fr/main/demarche/detaildemarche/editdem.compfilariane.redirection/1" id="redirection_0">Gestion des démarches</a>
 &gt;

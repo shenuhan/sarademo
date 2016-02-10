@@ -15,6 +15,12 @@
             <artifactId>tapestry-core</artifactId>
             <version>${tapestry-release-version}</version>
         </dependency>
+        
+        <dependency>
+		    <groupId>org.got5</groupId>
+		    <artifactId>tapestry5-jquery</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
 
         <!-- Include the Log4j implementation for the SLF4J logging framework -->
         <dependency>
