@@ -10,14 +10,13 @@ import org.apache.tapestry5.annotations.Log;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.HttpError;
 import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
-import org.apache.tapestry5.services.ajax.JavaScriptCallback;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.slf4j.Logger;
 
 /**
  * Start page of application demo.
  */
-@Import(module={"bootstrap/modal","jquery"})
+@Import(module={"bootstrap/modal","jquery"}, stylesheet={"context:css/font-awesome.css","context:css/bootstrap.css","context:css/demo.css"})
 public class Index
 {
   @Inject

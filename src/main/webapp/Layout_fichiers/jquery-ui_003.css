@@ -1,0 +1,152 @@
+@CHARSET "UTF-8";
+
+/* Overlays */
+.ui-accordion .ui-accordion-header {
+	color: white;
+}
+
+/* TR overrides */
+.ui-tabs .ui-tabs-nav li {
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: inherit;
+}
+
+.ui-tabs .ui-tabs-panel {
+	background: none repeat scroll 0 0 transparent;
+	border-width: 1px;
+	padding: 0.5em;
+}
+
+/* Component containers
+----------------------------------*/
+.ui-widget {
+	font-size: 11px;
+}
+
+.ui-widget .ui-widget {
+	font-size: 100%;
+}
+
+.ui-widget-header {
+	background: url("../images/bg_tabcaption.gif") repeat-x scroll 0 0/100% 100% #3DB9ED;
+	color: #FFFFFF;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: url("images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6;
+	background-color: inherit;
+	color: inherit;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+	{
+	font-weight: inherit /*{fwDefault}*/;
+	color: inherit /*{fcActive}*/;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	background: url("../images/bg_tabcaption.gif") repeat-x scroll 0 0/100% 100% #3DB9ED;
+	font-weight: inherit /*{fwDefault}*/;
+	color: inherit /*{fcActive}*/;
+}
+
+/* Corner radius */
+.ui-accordion .ui-accordion-header.ui-corner-all, .ui-accordion .ui-accordion-header.ui-corner-top, .ui-accordion .ui-accordion-header.ui-corner-left,
+	.ui-accordion .ui-accordion-header.ui-corner-tl {
+	border-top-left-radius: 0px /*{cornerRadius}*/;
+}
+
+.ui-accordion .ui-accordion-header.ui-corner-all, .ui-accordion .ui-accordion-header.ui-corner-top, .ui-accordion .ui-accordion-header.ui-corner-right,
+	.ui-accordion .ui-accordion-header.ui-corner-tr {
+	border-top-right-radius: 0px /*{cornerRadius}*/;
+}
+
+.ui-accordion .ui-accordion-header.ui-corner-all, .ui-accordion .ui-accordion-header.ui-corner-bottom, .ui-accordion .ui-accordion-header.ui-corner-left,
+	.ui-accordion .ui-accordion-header.ui-corner-bl {
+	border-bottom-left-radius: 0px /*{cornerRadius}*/;
+}
+
+.ui-accordion .ui-accordion-header.ui-corner-all, .ui-accordion .ui-accordion-header.ui-corner-bottom, .ui-accordion .ui-accordion-header.ui-corner-right,
+	.ui-accordion .ui-accordion-header.ui-corner-br {
+	border-bottom-right-radius: 0px /*{cornerRadius}*/;
+}
+
+.ui-tabs .ui-widget-header {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #222222 /*{fcHeader}*/;
+	font-weight: bold;
+	border: 0px;
+}
+
+.ui-tabs .ui-state-default, .ui-tabs .ui-widget-content .ui-state-default, .ui-tabs .ui-widget-header .ui-state-default {
+	border: 1px solid #16B20F;
+	color: #555555;
+	font-weight: normal;
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.ui-tabs .ui-state-active, .ui-tabs .ui-widget-content .ui-state-active, .ui-tabs .ui-widget-header .ui-state-active {
+	background: none repeat scroll 0 0 #FFFFFF;
+	background-color: #16B20F;
+	border: 1px solid #AAAAAA;
+	color: #212121;
+	font-weight: normal;
+}
+
+/* Gestion de la second form d'onglets jQuery-UI spécifique à SARA */
+div.onglets.ui-tabs.ui-widget-content {
+	border: none;
+}
+
+div.onglets.ui-tabs ul.ui-tabs-nav {
+	list-style: none outside none;
+	border-bottom: 4px solid #B0C27A;
+	margin-bottom: 10px;
+}
+
+div.onglets.ui-tabs ul.ui-tabs-nav li.ui-state-default {
+	display: inline;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	margin-right: 4px;
+	background: url('../images/bg_ongletInact_D.gif') no-repeat scroll right center transparent;
+	font-size: 10px;
+	border: none;
+}
+
+div.onglets.ui-tabs ul.ui-tabs-nav li.ui-tabs-active {
+	font-weight: bold;
+	border: none;
+	background-color: none;
+	background: url('../images/bg_ongletAct_D.gif') no-repeat scroll right center transparent;
+}
+
+div.onglets.ui-tabs ul.ui-tabs-nav li.ui-state-default a {
+	padding-bottom: 3px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 4px;
+	background: url('../images/bg_ongletInact_G.gif') no-repeat scroll 0% 0% transparent;
+}
+
+div.onglets.ui-tabs ul.ui-tabs-nav li.ui-tabs-active a {
+	background: url('../images/bg_ongletAct_G.gif') no-repeat scroll 0% 0% transparent;
+}
+
+div.onglets.ui-tabs div.ui-tabs-panel.ui-widget-content {
+	border: none;
+}
+
+div.ui-dialog-buttonset {
+	float: right;
+}
+
+/* Il faut que la couleur de l'accordéon reste stable entre l'état actif et inactif. */
+.ui-accordion .ui-accordion-header {
+	background: url("../images/bg_tabcaption.gif") repeat-x scroll 0 0/100% 100% #3DB9ED;
+}

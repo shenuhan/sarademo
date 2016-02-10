@@ -1,12 +1,7 @@
-<html t:type="layout" title="demo Index"
+<html t:type="layout2" title="Sara demo"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter"> 
-	<div class="span4"> 
-		<p>
-			<t:eventlink event="ajax" zone="modalzone" class="btn btn-default">Ajax&raquo;
-			</t:eventlink>
-		</p>
-	</div> 
+	<t:eventlink event="ajax" zone="modalzone" class="demo-button"><i style="font-size: 4em;" class="fa fa-phone-square"></i></t:eventlink>	
 	<t:zone t:id="modalzone" class="span4">
 	</t:zone> 
 	<t:block t:id="modalblock">

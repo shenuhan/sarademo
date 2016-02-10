@@ -1,0 +1,29 @@
+.column_sort {
+	background-image : url("../images/bullet_arrow_up_down.png");
+	background-repeat: no-repeat; 
+	background-size: 16px 16px;
+	background-position: right;
+	padding-left: 16px;
+	height: 17px;
+	width: 17px;
+}
+
+.column_asc {
+	background-image : url("../images/bullet_arrow_down.png");
+	background-repeat: no-repeat; 
+	background-size: 16px 16px;
+	background-position: right;
+	padding-left: 16px;
+	height: 17px;
+	width: 17px;
+}
+
+.column_desc {
+	background-image : url("../images/bullet_arrow_up.png");
+	background-repeat: no-repeat; 
+	background-size: 16px 16px;
+	background-position: right;
+	padding-left: 16px;
+	height: 17px;
+	width: 17px;
+}

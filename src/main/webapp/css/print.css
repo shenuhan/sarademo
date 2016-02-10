@@ -1,0 +1,24 @@
+/* Des textes en noir avec une couleur de fond */
+div .lNoirFondVert, a.lNoirFondVert:link, a.lNoirFondVert:visited, #main table td a.lNoirFondVert:link, #main table td a.lNoirFondVert:visited, y.lNoirFondVert, table td y.lNoirFondVert {
+	color: #000;
+	background-color:#60be14;
+	border: 1px solid #60be14;
+	margin: 5px;
+}
+div .lNoirFondRouge, a.lNoirFondRouge:link, a.lNoirFondRouge:visited, #main table td a.lNoirFondRouge:link, #main table td a.lNoirFondRouge:visited, y.lNoirFondRouge, table td y.lNoirFondRouge {
+	color: #000;
+	background-color:#be1414;
+	border: 1px solid #be1414;
+	margin: 5px;
+}
+div .lNoirFondOrange, a.lNoirFondOrange:link, a.lNoirFondOrange:visited, #main table td a.lNoirFondOrange:link, #main table td a.lNoirFondOrange:visited, y.lNoirFondOrange, table td y.lNoirFondOrange {
+	color: #000;
+	background-color:#FF4500;
+	border: 1px solid #FF4500;
+	margin: 5px;
+}
+
+/* Fait disparaître le bouton Imprimer sur la page imprimee */
+div.hideWhenPrinting{
+	display:none;
+}

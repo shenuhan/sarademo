@@ -1,0 +1,214 @@
+.conteneur {
+	width: 98%;
+}
+
+.conteneur,.conteneur p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+}
+
+.dialogbox,.dialogbox p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+}
+
+.conteneur h1,.conteneur h2 {
+	float: none;
+}
+
+.conteneur form fieldset {
+	width: 100%
+}
+
+.conteneur input,.conteneur select {
+	margin: 0px 0px 0px 0px;
+}
+
+.conteneur form {
+	margin: 10px 0;
+}
+
+.conteneur .filtrepanel .filtrepanelheader {
+	background: url("../images/bg_filtrcaption.gif") repeat-x scroll 0 0 #3DB9ED;
+	height: 10px;
+	font-weight: bold;	
+	color: #FFFFFF;
+	padding: .2em .5em .5em .5em;
+	border-color: #000000;
+}
+
+.conteneur .filtrepanel .filtrepanelbody {
+	background: url("../images/bg_tabfiltre.gif") repeat-x scroll 0 0 #D3EBF9;
+	border-color: #000000;
+}
+
+.filtrepanelheaderdownload {
+	background:url(../images/pointill_double_H.gif)  repeat-x;
+	color: #000000;
+	padding: 14px 0 10px;
+	font-size: 16px;
+}
+
+.dialogbox button {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.dialogbox .ui-widget-header {
+	background: url("../images/bg_tabcaption.gif") repeat-x scroll 0 0
+		#3DB9ED;
+	background-size: 100% 100%;
+	border-color: #168BAA;
+	color: #FFFFFF;
+}
+
+/* Ajout d'un style pour masquer le bouton "close" des popup dialog. */
+.ui-dialog.no-close .ui-dialog-titlebar-close {
+	display: none;
+}
+
+.conteneur .ui-widget {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+}
+
+.conteneur .ui-corner-all,.conteneur .ui-corner-top,.conteneur .ui-corner-left,.conteneur .ui-corner-tl
+	{
+	border-top-left-radius: 0px;
+}
+
+.conteneur .ui-corner-all,.conteneur .ui-corner-top,.conteneur .ui-corner-right,.conteneur .ui-corner-tr
+	{
+	border-top-right-radius: 0px;
+}
+
+.conteneur .ui-corner-all,.conteneur .ui-corner-bottom,.conteneur .ui-corner-left,.conteneur .ui-corner-bl
+	{
+	border-bottom-left-radius: 0px;
+}
+
+.conteneur .ui-corner-all,.conteneur .ui-corner-bottom,.conteneur .ui-corner-right,.conteneur .ui-corner-br
+	{
+	border-bottom-right-radius: 0px;
+}
+
+button[name="bt_vert"] {
+	background-image: url("../images/bg_green.png") !important;
+	background-size: 100% 100% !important;
+	border-color: #9FC120 !important;
+}
+
+button[name="bt_vert"] span {
+	color: #189D10;
+}
+
+button[name="bt_rouge"] {
+	background-image: url("../images/bg_red.png") !important;
+	background-size: 100% 100% !important;
+	border-color: #B42232 !important;
+}
+
+button[name="bt_rouge"] span {
+	color: #FFFFFF;
+}
+
+button[name^="bt_"] {
+	height: 18px;
+}
+
+button[name^="bt_"] span {
+	display: inline !important;
+	font-weight: bold;
+}
+
+.libelle {
+	float: left;
+	color: rgb(1, 69, 142);
+	font-weight: bold;
+	text-align: right;
+	width: 45%;
+	min-height: 22px;
+	padding-right: 5px;
+}
+
+.champ {
+	float: left;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	text-align: left;
+	width: 50%;
+	min-height: 22px;
+}
+
+.champ #filtreVersion {
+	margin-right: 2px;
+}
+
+.champ #filtreIntervenant {
+	margin-top: 2px;
+}
+
+.champ #filtreClassification {
+	width: 100%;
+}
+
+.champ #filtrePEC {
+	margin-top: 3px;
+	margin-bottom: 4px;
+	width: 100%;
+}
+
+.champ #filtreMethode {
+	width: 100%;
+}
+
+.header {
+	background: url("../images/bg_tabcaption.gif") repeat-x scroll 0 0
+		#3DB9ED;
+	background-size: 100% 100%;
+	border-color: #168BAA;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 2px 5px;
+	text-align: left;
+	min-height: 18px !important;
+	border-color: #168BAA;
+	overflow:hidden;
+}
+
+.htitle,.hbuttons {
+	float: left;
+	width: 50%;
+	line-height: 29px !important;
+	margin-top: -5px;
+}
+
+
+.hbuttons {
+	text-align: right;
+}
+
+.hbutton {
+	float: right;
+	padding-top: 2px;
+	padding-left: 5px;
+}
+
+.hidden {
+	display: none;
+}
+
+.cursor_pointer {
+	cursor: pointer;
+}
+
+.clear {
+	clear: both;
+}
+
+.float_right {
+	float: right;
+}
+
+.float_left {
+	float: left;
+}

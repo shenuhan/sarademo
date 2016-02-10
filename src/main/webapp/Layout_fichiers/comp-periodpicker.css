@@ -1,0 +1,116 @@
+.reset {
+	font-weight:bold;
+	cursor:pointer;
+	color:#B00 !important;
+}
+
+.period_picker_input_text{
+	width:80px !important;
+	border:1px solid #CCC;
+	cursor: default;
+}
+
+.period_picker_pannel {
+	border:1px solid #BBB;
+	background: url("../images/ui-bg_highlight-hard_100_f2f5f7_1x100.png") repeat-x scroll 50% top rgb(242, 245, 247);
+	display:none;
+	padding:5px;
+}
+
+.period_picker_pannel table{
+	border-collapse:collapse;
+	width:150px;
+}
+
+.period_picker_pannel .move_left, .period_picker_pannel .move_right {
+	border: 1px solid rgb(174, 208, 234);
+	background-color: rgb(222, 237, 247);
+	color: rgb(34, 34, 34) !important;
+	font-weight: bold !important;
+	vertical-align:middle;
+	cursor:pointer;
+	height:140px;
+	padding:0 2px;
+}
+
+.period_picker_pannel .move_left .img_left {
+	background-image: url(../images/ui-icons_72a7cf_256x240.gif);
+	background-position: -80px -192px;
+	width: 16px;
+	height: 16px;
+}
+
+.period_picker_pannel .move_right .img_right {
+	background-image: url(../images/ui-icons_72a7cf_256x240.gif);
+	background-position: -48px -192px;
+	width: 16px;
+	height: 16px;
+}
+
+.period_picker_pannel .monthName {
+	font-size:8pt;
+	padding:2px 0;
+	text-align:center;
+	border: 1px solid rgb(174, 208, 234);
+	background: url("../images/ui-bg_highlight-soft_100_deedf7_1x100.png") repeat-x scroll 50% 50% rgb(222, 237, 247);
+	color: rgb(34, 34, 34) !important;
+	font-weight: bold;
+}
+
+.period_picker_pannel th {
+	font-size:8pt;
+	padding:2px 0;
+	text-align:center;
+	border: none;
+	background-color: #F2F5F7;
+	color: rgb(34, 34, 34) !important;
+	font-weight: bold;
+}
+
+.period_picker_pannel .period_picker_firstMonth{
+	vertical-align:top;
+	padding:0px 5px 0 !important;
+	width:150px;
+	background-color: #F2F5F7;
+}
+
+.period_picker_pannel .period_picker_secondMonth{
+	vertical-align:top;
+	padding:0px 5px 0 0 !important;
+	width:150px;
+	background-color: #F2F5F7;
+}
+
+.period_picker_pannel td td {
+	text-align:center;
+	font-size:8pt;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	
+	border: 1px solid rgb(174, 208, 234);
+	background: url("../images/ui-bg_glass_80_d7ebf9_1x400.png") repeat-x scroll 50% 50% rgb(215, 235, 249);
+	color: rgb(39, 121, 170);
+	font-weight: bold;
+}
+
+.period_picker_pannel td td.hover{
+	background:#EFEFEF;
+}
+
+.period_picker_pannel td td.selected{
+	border: 1px solid rgb(249, 221, 52);
+	background: url("../images/ui-bg_highlight-soft_25_ffef8f_1x100.png") repeat-x scroll 50% top rgb(255, 239, 143);
+	color: rgb(54, 54, 54);
+	font-weight:bold;
+}
+
+.period_picker_pannel td td.selected_fade{
+	background:#e6f2fa;
+	color:#aaa;
+}
+
+.period_picker_pannel .unselected_month{
+	color:#999;
+	font-style:italic;
+}

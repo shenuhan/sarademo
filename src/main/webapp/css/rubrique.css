@@ -1,0 +1,15 @@
+.rubriqueGauche {
+	float: left;
+	width: 50%
+}
+
+.rubriqueDroite {
+	right:0;
+	margin:0;
+	padding:0
+}
+
+ul.rubriqueDroite li {
+	 text-align:right;
+	 margin-left:2px
+}

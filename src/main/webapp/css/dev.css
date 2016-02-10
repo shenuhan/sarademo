@@ -1,0 +1,1604 @@
+/* --------------------------------------------------------------------- */
+/*  FEUILLE DE STYLE DEVELOPPEURS  */
+/* --------------------------------------------------------------------- */
+/*  Ces styles viennent �craser ceux de MAIN.CSS  */
+/* --------------------------------------------------------------------- */
+
+/*
+#main form input, #main form select {
+
+}
+*/
+#infobulle{
+	position: absolute;	
+	visibility : hidden;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+	font-family: Verdana, Arial;
+	font-size: 0.7em;
+	background-color: #e8f8fa;
+}
+
+ form table.tableform .filtre a,  form table.tableform .filtre a:link,  form table.tableform .filtre a:visited {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#steps {
+	clear: none; /* Empêche que la liste des étapes ne s'aligne avec le bas du menu de gauche lorsque celui-ci est présent */
+}
+
+.data{
+	/* Formate les données dans les pages d'informations (cf. détail d'un ES) */
+	padding-left: 20px;
+	font-size: 0.9em;
+	line-height: 19px;
+}
+
+.data label {
+	clear: none;
+}
+
+/* Affichage des champs non éditables */
+.disabled {
+	color: #555;
+	background-color: #DDD;
+}
+
+/* Pour les champs non éditables directement (ex: "Groupe" pour une EJ) */
+.disabled2 {
+	color: #555;
+	background-color: #FFF;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination {
+	margin: 20px 0;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination fieldset {
+	display: inline;
+	width: auto;
+	border: 1px solid #a9a9a9;
+	padding: 0 5px;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination legend {
+	padding: 0 5px;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination p {
+	font-size: 0.7em;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination ul {
+	float: right;
+	margin-top: 20px;
+	list-style: none;
+	font-size: 0.7em;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination li {
+	display: inline;
+	padding: 0 4px;
+	margin: 0 1px;
+	border: 1px solid #a9a9a9;
+	color: #000;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination li.zap {
+	border: none;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination li.noLink {
+	color: #a9a9a9;
+	font-weight: normal;
+}
+
+/* Suppression du sélecteur #main */
+div.pagination a, div.pagination a:link, div.pagination a:visited {
+	text-decoration: none;
+	color: #01458e;
+	font-weight: normal; 
+}
+
+/* Suppression du sélecteur #main */
+div.pagination a:hover {
+	color: #000;
+}
+
+
+/* Affichage des textareas "localité" et "commentaire" */
+textarea.localite,
+textarea.commentaire {
+	font: 101% Arial, Helvetica, Sans-serif;
+}
+
+
+/* Affichage correct du picto Calendrier sur la popup de cessation d'activité */
+#winAlertArchiver img#dateCessation {vertical-align:top; border: none; margin: 2px 4px;}
+
+/* Affichage ou non des lignes du tableau r�capitulatif des structures */
+.noShow {
+	display: none;
+}
+.show {
+	display: table-row;
+}
+.show2 {
+	display: inline;
+}
+
+/* Affichage des coordonnées sur plusieurs colonnes */
+ form fieldset.blocLeft {
+	float: left;
+}
+ form fieldset.bloc {
+	float: left;
+	width:45%;
+	min-width:365px;
+	_width: 400px; /* Hack IE */
+	margin-right: 10px;
+}
+ form div.bloc {
+	float: left;
+	width:45%;
+	min-width:370px;
+	_width: 410px; /* Hack IE */
+	margin-right: 10px;
+}
+
+ form div.blocCenter {
+	width:70%;
+	min-width:370px;
+	_width: 410px; /* Hack IE */
+	margin:auto;
+}
+
+/* AJOUT STUDIO */
+form div.f2Col { overflow:auto;}
+form div.bloc fieldset p {clear: left; overflow:auto;}
+form div.bloc fieldset p label {line-height:normal; padding: 0 5px 5px 0;}
+form fieldset.bloc p {clear: left; overflow:auto;}
+form fieldset.bloc p label {line-height:normal; padding: 0 5px 5px 0;}
+
+/* Largeur des champs de saisie pour les données relatives aux activités */
+input.donneeActivite {width: 40px; padding: 0;}
+
+/* Champs plus larges pour certaines données */
+input.large, textarea.large {width: 170px;}
+input.treslarge, textarea.treslarge {width: 300px;}
+/* Class pour les boutons "input" */
+input.bouton {
+	border:none;
+}
+
+/* Reprise de main.css mais avec des polices en pixel (car pb de taille avec tableaux imbriqués) */
+form table.tableform tbody.tbfiltre {font-weight: bold;font-size:11px;}
+form table.tableform tbody.tbfiltre .labelfiltre label {font-size: 11px;} /* 1em */
+form table.tableform tbody.tbfiltre .ipRadio label {font-size: 11px; padding-left:3px;}
+
+/* alternance lignes paires/impaires */
+form table.tableform tbody .lignepairegrandepolice {
+	background-color: #e8f8fa;
+	font-size: 1.1em;
+}
+
+form table.tableform tbody .ligneimpairegrandepolice {
+	background-color: #fff;
+	font-size: 1.1em;
+}
+
+form table.tableform tr.lignepairegrandepolice td.tdGrise { background: #eeeeee; }
+form table.tableform tr.ligneimpairegrandepolice td.tdGrise { background: #eeeeee;}
+
+tr.trGrise{
+	background: #eeeeee;
+	font-style:italic;
+}
+
+#histo li.checkUnder {
+	color: #000;
+	padding: 7px 0 3px 25px ;
+	font-size: larger;
+}
+#histo li.unCheckUnder {
+	color: #7c9db2;
+	padding: 7px 0 3px 25px;
+	font-size: larger;
+}
+#histo li.selectCheckUnder {
+	color: #000;
+	padding: 7px 0 3px 25px;
+	font-size: larger;
+}
+
+/* Corrige les problèmes de déformation des boutons dans IE6 et IE7 */
+p.btAction img, p.btActionW50 img, p.btAction input, p.btActionW50 input { margin:0 2px 0 0; padding:0}
+#main fieldset.identification input.bt_valider {
+	width:52px;
+	height:18px
+	}
+
+/* DEBUT Balises Tapestry pour les erreurs dans un formulaire */
+div.t-error
+{
+	width: 50%;
+	margin-top: 15px;
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	padding-left: 45px;
+	text-align: left;
+	font-size: 0.7em;
+	color: #ba161c;
+	background-color: #fff6bf;
+	background-image: url(../images/alert.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: 15px center;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #ffd324;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #ffd324;
+	border-left-width: 0px;
+	border-right-width: 0px;
+}
+
+div.t-error ul
+{
+	margin-top: 2px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-left: 0px;
+	background-color: #fff6bf;
+	color: #ba161c;
+}
+
+div.t-error li
+{
+	margin-top: 2px;
+	margin-right: auto;
+	margin-bottom: 2px;
+	margin-left: auto;
+	background-color: #fff6bf;
+	color: #ba161c;
+}
+
+html > body div.t-error li
+{
+	margin-left: 20px;
+	background-color: #fff6bf;
+	color: #ba161c;
+}
+
+div.t-error div
+{
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	display: block;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-color: #fff6bf;
+	color: #ba161c;
+	font-weight: bold;
+	border-left-width: 0px;
+	border-right-width: 0px;
+}
+
+/* FIN Balises Tapestry pour les erreurs dans un formulaire */
+
+div.spacer {
+	width: 90%;
+	float: left;
+}
+div.spacer2 {
+	clear: both;
+}
+
+/*  Reduction de la taille des rubriques */
+#sepRub li {
+	font-size: 0.85em;
+}
+
+/*
+form table.tableformDemarche { width : 100% !important }
+*/
+
+p.caseACocher {height: 2em;}
+
+
+form table.tableform tbody td.typeES,
+form table.tableform tbody td.typeEJ,
+form table.tableform tbody td.typeIACE,
+form table.tableform tbody td.typeARH,
+form table.tableform tbody td.typeDRASS,
+form table.tableform tbody td.typeGRP,
+form table.tableform tbody td.typeGCS {padding-left: 20px; background-repeat: no-repeat; background-position: 5px 50%;}
+
+form table.tableform tbody td.typeES    {background-image: url(../images/type-ES.gif);}
+form table.tableform tbody td.typeEJ    {background-image: url(../images/type-EJ.gif);}
+form table.tableform tbody td.typeIACE  {background-image: url(../images/type-IACE.gif);}
+form table.tableform tbody td.typeARH   {background-image: url(../images/type-ARH.gif);}
+form table.tableform tbody td.typeDRASS {background-image: url(../images/type-DRASS.gif);}
+form table.tableform tbody td.typeGRP   {background-image: url(../images/type-GRP.gif);}
+form table.tableform tbody td.typeGCS   {background-image: url(../images/type-GCS.gif);}
+
+form fieldset table tr td.droite {text-align: right;}
+form table.tableform tbody tr.nbResultats {font-weight: bold; background-color: #EEE;}
+form table.tableform tbody tr.nbResultats td {background: #f4f4f4 url(../images/bg_tabheader.gif) repeat-x; border-bottom: none;}
+
+p.legendeFormulaire { color: #999;font-style: italic; }
+
+
+
+/* Différenciation des structures archivées */
+span.dateArchivage {color: red; font-weight: bold;}
+.grisItaliqueImportant,
+.grisItaliqueImportant * {
+	color: #999 !important;
+	font-style: italic !important;
+}
+
+/* Indicateur non modifiable (tableau des activités) */
+.indicateurNonModifiable {
+	color: #999;
+}
+
+.majuscules {
+	text-transform:uppercase;
+}
+
+/* Affichage ou non des lignes du tableau de modification des activités
+ * ATTENTION : Le nom des classes CSS ne doit pas être modifié, il est utilisé pour déterminer si l'activité est choisie ou non.
+ */
+.activiteNoShow {
+	display: none;
+}
+.activiteShow {
+	display: table-row;
+	_display: block; /* Hack IE */
+}
+
+.listeActivitesDispo {
+    width: 98%;
+}
+
+.enveloppeOk {
+	width: 16px;
+	height: 12px;
+	padding-top: 4px;
+	text-align: center;
+	font-size: 9px;
+	display: inline;
+	background: url(../images/envoi_valide.gif) no-repeat;
+	font-weight: bold;
+}
+
+.enveloppeKo {
+	width: 16px;
+	height: 12px;
+	padding-top: 4px;
+	text-align: center;
+	display:inline;
+	font-size: 9px;
+	background: url(../images/envoi_pas_valide.gif) no-repeat;
+	font-weight: bold;
+}
+
+.margeGauche20 {
+	padding-left: 20px;
+}
+
+.margeGauche50 {
+	padding-left: 50px;
+}
+
+a.lienRetour {
+	display: block;
+	margin-top: 5px; 
+	background: url(../images/leftArrow.gif) no-repeat 0 3px;
+	padding-left: 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #555;
+}
+
+a.lienRetour:hover{
+	text-decoration:underline;
+}
+
+a.lienLargeSimple {
+	margin-top: 5px; 
+	padding-left: 5px;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: #00448b;
+}
+
+form p a.lienLargeSimple img{
+	text-decoration : none;
+	border : 0px;
+}
+
+a.lienRetourLarge {
+	display: block;
+	margin-top: 5px; 
+	background: url(../images/leftArrow.gif) no-repeat 0 5px;
+	padding-left: 15px;
+	text-decoration: none;
+	font-size: 1.0em;
+	font-weight: bold;
+	color: #00448b;
+}
+
+
+/* -------------------------------------------------------------------- 
+                         HAS
+                   Update 10/2008
+             By Le Studio, Atos Worldline
+-------------------------------------------------------------------- */
+#colL { margin-left:10px; }
+#main.colL { margin-left:160px;}
+
+#sepRub li {
+font-size: 0.8em;
+	padding:6px 0pt 6px 13px;
+}
+#sepRub li a, #sepRub li a:link, #sepRub li a:visited {
+	color:#6D7F89;
+}
+#sepRub li.activ a, #sepRub li.activ a:link, #sepRub li.activ a:visited {
+	color:#429ecc;
+	font-weight: bold;
+}
+#sepRub li a:hover { color: #429ecc;}
+
+#sepRub.deconnect p, #sepRub.deconnect p a:link, #sepRub.deconnect p a:visited {
+	color: #FFF;
+}
+#sepRub.deconnect p a:link, #sepRub.deconnect p a:visited {
+	text-decoration: underline
+}
+
+#histo { float: left; width: 100%; font-size: 11px; border-bottom-style: dotted; border-top-style: dotted; }
+
+#histo ul {
+	width: auto;
+	margin: 10px 0 10px 25px;
+	_margin: 5px 0 10px 25px;
+	padding: 10px;
+	list-style: none;
+	font-weight: bold;
+	background: #FFF url(../images/bg_blocGris.gif) repeat-x top;
+	border: 1px solid #bdbcbd;
+}
+
+#histo li.checkUnder, #histo li.selectCheckUnder, #histo li.unCheckUnder {
+	font-size: 11px;
+	font-weight: normal;
+	color: #000;
+}
+
+#histo li strong {
+	font-weight: normal;
+	color: #797979;
+}
+#histo li.selectCheck, #histo li.selectCheckUnder {
+	background-position: 0 5px;
+}
+
+#histo li.unCheck { color: #000; background-position: 2px 0;}
+
+#histo li img { padding:0pt 0pt 2px 4px; }
+
+#histo li a.chevronB:link, #histo li a.chevronB:visited {
+	color: #000;
+	/*padding-right: 3px;*/
+	background: url(../images/doublChevronBas.gif) no-repeat right;
+	text-decoration: none;
+}
+#histo li a.chevronH:link, #histo li a.chevronH:visited {
+	color: #024691;
+	/*padding-right: 3px;*/
+	background: url(../images/doublChevronHaut.gif) no-repeat right;
+	text-decoration: none;
+}
+#blocMenu .no_accordion_select a:link, #blocMenu .no_accordion_select a:visited {
+	text-decoration: none;
+}
+
+#blocMenuCentral {
+  display:block;
+  width:750px;
+  margin:50px auto;
+  border:1px solid #00458D;
+
+}
+#blocMenuCentral ul {
+  padding:0px;
+  margin:0px;
+  list-style-type:none;
+}
+#blocMenuCentral ul li{
+ font-family:arial;
+ color:gray;
+ display:block;
+ float:left;
+ padding:0px;
+ margin:8px;
+ width:340px;
+ height:120px;
+}
+
+#blocMenuCentral ul li img{
+ float:left;
+ width:85px;
+ height:85px;
+ border:0px;
+}
+#blocMenuCentral ul li h3{
+  text-align:right; 
+  border-bottom:1px solid #00458D;
+}
+#blocMenuCentral ul li h3 a{
+  text-decoration:none;
+  color:#00458D;
+}
+#blocMenuCentral ul li h3 img{
+	border:0px;
+}
+#blocMenuCentral ul li .desc{
+  padding-left:105px;
+  padding-top:10px;
+  font-style:italic;
+  font-size:75%;
+}
+
+/* ----------------------------- FIL D'ARIANE -------------------------------- */
+
+.blocFilAriane {
+	height: 32px;
+	margin-bottom: 0px;
+}
+
+.blocFilAriane .lienAide {
+	cursor: pointer;
+	float: right;
+}
+
+.blocFilAriane .texteFilAriane a {
+	text-decoration: underline;
+	color: #000;
+}
+
+/* Champs obligatoires */
+p label.oblig, td label.oblig {
+	font-weight: bold;
+}
+
+form table.tableform thead th.oblig{
+	font-weight: bold;
+}
+
+/* -------------- SYNTHESE DES INFOS COMPLEMENTAIRES (DEMARCHE)---------------- */
+.syntheseInfosCompl th.nomEs {
+	color: #000;
+	font-weight: bold;
+	border-top: 1px solid #cfcfcf;
+}
+
+.syntheseInfosCompl td.labelInfo {
+	width: 200px;
+	text-align: right;
+	padding-right: 5px;
+	vertical-align: top;
+	color: #01458e;
+}
+
+.syntheseInfosCompl td {
+	border: none !important;
+}
+
+.titreSyntheseDemarche {
+	font-weight: bold;
+	font-size: 14px;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.hand {
+	cursor: pointer;
+}
+
+/* Préconisation ergonomie : les liens sont soulignés */
+a.link{
+	text-decoration : underline;
+}
+
+a.linkBis {
+	color: #3e5462;
+}
+
+p.champForm {
+	color: #01458e;
+}
+
+/* Pour ajouter une bordure à la page de login sur IE6 */
+p.afterCheck input{
+	border : 1px solid #7F9DB9;
+}
+
+/* Différenciation des structures ayant une date de fin pour la démarche */
+.demTerminee,
+.demTerminee * {
+    background-color:#DADADA;
+}
+
+div table.tableaide {
+	width: 98%;
+	border: 1px solid #168baa;
+	font-size: 0.75em;
+}
+
+div table.tableaide caption {
+	border: 1px solid #168baa;
+	border-top: 2px solid #168baa;
+	color: #fff;
+	font-size: 11px;
+	_font-size: 0.9em;
+	font-weight: bold;
+	text-align: left;
+	background: #3db9ed url(../images/bg_tabcaption.gif) repeat-x;
+	padding: 2px 5px;
+}
+
+div table.tableaide caption .action {
+	float: right;
+}
+div table.tableaide caption .action a {
+	color: #fff;
+	text-decoration: none;
+}
+div table.tableaide caption .action a:hover {
+	text-decoration: underline;
+}
+div table.tableaide thead {
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+	background: #f4f4f4 url(../images/bg_tabheader.gif) repeat-x;
+}
+
+div table.tableaide thead th {
+	border-bottom: 1px solid #168baa;
+}
+
+div table.tableaide thead th {
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+}
+div table.tableaide tbody .lignepaire {
+	background-color: #e8f8fa;
+	font-size: 0.9em;
+}
+
+div table.tableaide tbody .ligneimpaire {
+	background-color: #fff;
+	font-size: 0.9em;
+}
+
+div table.tableaide tbody td .lienCritere {
+	text-decoration: none;
+	color: #01458e;
+	font-weight: bold;	
+}
+
+/* Affichage des chapitres dans la popup de navigation */
+div.blocChapitre {
+	float: left;
+	width:23%;
+	/*min-width:200px;*/
+	_width: 200px; /* Hack IE */
+	margin-right: 10px;
+}
+/* Affichage des PEC et des références dans la popup de navigation */
+table.navigationActions {
+	background-color: #d9d9d9;
+	margin-bottom: 5px;
+}
+table.navigationActions tbody tr td {
+	padding: 0 5px;
+	background-color: #fff;
+}
+table.navigationActions tbody tr td.libelleColonne {
+	background-color: #eee;
+	color: #01458e;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.deroulant {
+	overflow-y : auto;
+	height: 300px;
+}
+
+/* Pour les tableaux qui suivent les légendes soient bien en dessous et pas à côté */
+.clear hr {display:none;}
+
+/* Pour utiliser les styles dans la pop-up */
+
+.wins p.alert,
+.wins p.attention,
+.wins p.attentionLarge,
+.wins p.confirm,
+.wins p.info,
+.wins p.infoLarge {
+	/*float: left;  Mis en commentaire novembre 08*/ 
+	width: 50%;
+	margin: 15px auto 30px auto;
+	padding: 5px 20px 5px 45px;
+	text-align: left;
+	font-size: 0.7em;
+	color: #ba161c;
+	background: #fff6bf url(../images/alert.gif) no-repeat 15px center;
+	border-top: 2px solid #ffd324;
+	border-bottom: 2px solid #ffd324;
+}
+
+.wins p.confirm {
+	color: #000;
+	background: #eaff9f url(../images/confirm.gif) no-repeat 15px center;
+	border-top: 2px solid #b0c27a;
+	border-bottom: 2px solid #b0c27a;
+}
+
+.wins p.info, p.infoLarge {
+	color: #000;
+	background: #e8f8fa url(../images/info.gif) no-repeat 15px center;
+	border-top: 2px solid #168BAA;
+	border-bottom: 2px solid #168BAA;
+	}
+	
+.wins p.attention,
+.wins p.attentionLarge {
+	color: #000;
+	background: #e8f8fa url(../images/alert.gif) no-repeat 15px center;
+	border-top: 2px solid #168BAA;
+	border-bottom: 2px solid #168BAA;
+}
+.wins p.attentionLarge {
+	width: 65%;
+}
+
+.wins p.info,
+.wins p.infoLarge {
+	color: #000;
+	background: #e8f8fa url(../images/info.gif) no-repeat 15px center;
+	border-top: 2px solid #168BAA;
+	border-bottom: 2px solid #168BAA;
+}
+.wins p.infoLarge {
+	width: 65%;
+}
+.wins table p.infoLarge {
+	font-size: 11px;
+}
+.wins p.confirm {
+	color: #000;
+	background: #eaff9f url(../images/confirm.gif) no-repeat 15px center;
+	border-top: 2px solid #b0c27a;
+	border-bottom: 2px solid #b0c27a;
+}
+	
+/* Pour réduire l'espace en dessous du blocLegende */
+#main div.blocLegende {
+	margin-bottom: 20px;
+}
+
+/* Pour les légendes avec un item à chaque ligne (plutôt que tous les items sur la même ligne) */
+#main div.aLaLigne p {
+	display: block;
+	margin: 0px 40px 0px 0;
+	padding: 0px 20px;
+	}
+	
+/* Pour les éléments en exposant */
+sup{
+    font-size:0.7em;
+}
+
+/* Pour différencier les liens qui ouvrent des pop-ups */
+a.popup{
+	border-bottom: 1px dotted Gray;
+}
+
+/* Pour éviter les problèmes d'input sans bordure sous IE (qui persistent malgre la bidouille du checkForm) */
+form input{ border:1px solid #7F9DB9;}
+form input img {border:none;}
+
+span.btVert,span.btVert a,span.btVert input,span.btRouge,span.btRouge input,span.btRouge a,span.btOrange,span.btOrange a,span.btBlanc,span.btBlanc a,span.btMetier,span.btMetier a,span.btTool,span.btTool a,span.btDesactiv,span.btDesactiv a,span.btDesactiv strong {
+	font-size: 12px;
+	cursor: pointer;
+}
+
+td.actionsREV {
+	white-space: nowrap;
+	width: 50px;
+}
+
+td.actionsREVpaire {
+	background-color: #e8f8fa;
+	white-space: nowrap;
+	width: 50px;
+}
+
+td.actionsREVimpaire {
+	background-color: #fff;
+	white-space: nowrap;
+	width: 50px;
+}
+
+
+/* Couleurs des cotations pour l'affichage sur la popup des critères associés */
+.lCotationA {font-weight: bold; color: green !important;}
+.lCotationB {font-weight: bold; color: orange !important;}
+.lCotationC {font-weight: bold; color: red !important;}
+.lCotationD {font-weight: bold; color: red !important;}
+.lCotationNA {font-weight: bold; color: darkgray !important;}
+.lCotationNonCote {font-weight: bold; color: black !important;}*/
+
+/* Pour que les liens inactifs du menu ne soient pas en gras */
+#blocMenu li.select {
+	font-weight:normal;
+}
+
+/* Textarea pour la saisie du REV de la partie 1 */
+input.textareaLarge {
+	font: 101% Arial, Helvetica, Sans-serif;
+	width:96%;
+	padding:5px;
+	margin:10px;
+}
+
+form textarea.textAreaMedium {
+	font: 100% Arial, Helvetica, Sans-serif;
+	width:22%;
+}
+
+/* Cadre historique pour formulaire de la partie 1 */
+table.tableHistoOption {
+	width:100%;
+	font-size:0.75em;
+	border:1px solid #D9D9D9;
+}
+table.tableHistoOption caption {
+	width:100%;
+	text-align:left;
+	font-weight: bold;
+	background-color: #BBB;
+	border-bottom: 1px solid #FFF;
+	padding: 5px 4px;
+}
+table.tableHistoOption caption a {
+	text-decoration: none;
+	color: #000000;
+}
+table.tableHistoOption tr {background-color: #d7d7d7;}
+table.tableHistoOption th, form table.tableHistoOption td {padding: 3px 5px;}
+table.tableHistoOption th {
+	text-align: right;
+	text-transform:none;
+	white-space:nowrap;
+}
+table.tableHistoOption td {width: 100%;}
+table.tableHistoOption .histoScroll {height: 100px; overflow-y: scroll;}
+table.tableHistoOption .histoPetitScroll {height: 50px; overflow-y: scroll;}
+
+/* Cadre pour Etat du REV en haut de page */
+table.etatREV {
+	color: #00448B;
+	border: 1px solid #58B1C8;
+	font-size: 0.8em;
+	width: auto;
+	margin-bottom: 5px;
+}
+
+table.etatREV tr td{
+	padding: 2px 3px;
+}
+
+/* Pour éviter que les tableaux ne partent sur la droite dans Firefox 3 Mac et Firefox 2 */
+span.legendEA {
+	float:none;	
+}
+
+span.legendEtape {
+	float:none;	
+}
+
+/* Style pour les dates (dernier import, dernière synchronisation, dernière répartition, etc.) */
+.infoDate {
+	float:right;
+	line-height: 14px;
+	color: #054E01;
+	font-size: 11px;
+	font-weight: bold;
+	border-bottom: 1px dotted #999;
+}
+
+/* On surcharge la mise en forme du mixin autocomplete */
+DIV.t-autocomplete-menu UL {
+	border : none;
+	background-color: #E3F7FE;
+	width: 150px;
+	height: 200px;
+}
+
+DIV.t-autocomplete-menu LI {
+    color: #6D7F89;
+    border-bottom: 1px solid #A9CCDF;
+}
+
+DIV.t-autocomplete-menu LI.selected {
+    color: #01458E;
+}
+
+/*****************************
+ Pour Generix sur alignement 
+ ******************************/
+
+div.pagination {
+	width:96%;
+}
+
+/* Alignement de la bordure en pointillé (encadré "Actualités") */
+#colR{
+	width:199px;
+}
+
+span.btVert, span.btRouge, span.btOrange {
+	float:none;
+}
+
+#infoValid, #infoRefus {
+	margin-left: 0;
+}
+
+/* Utilisé dans la vue synthétique d'une structure */
+h3.legend {
+	text-transform: uppercase;
+	width: 100%; /*border-bottom: 1px solid #cfcfcf;*/
+	border-bottom: 1px dotted #000000;
+	color: #434343;
+	margin: 0 0 15px 0;
+	font-size: 0.85em;
+	font-weight: bold;
+	padding: 20px 0 2px 0;
+}
+
+#main div.blocLegende {
+	width: 96%;
+}
+
+fieldset p span.labellike a{
+	text-decoration:none;
+	font-size:13px;
+	color:#01458E;
+}
+
+/* Opera */ @media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0){
+	#main span.btVert, #main span.btRouge, #main span.btOrange, #main span.btMetier, #main span.btTool, #main span.btDesactiv,#main span.btBlanc{
+	padding-top:0;
+}
+}
+
+div table.tableaide tbody .lignegrise {
+	background-color: #DCDCDE;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.boutonJaccepteLesDecisions {
+	 background:#009900;
+}
+
+.maligne{
+	 margin-bottom:0px;
+	 border-bottom: solid 2px #C0C0C0;
+	 width:100%;
+} 
+
+#jacceptelesdecisions{
+	padding:25px;
+	margin:50px;
+}
+/* ----------------------------- ? POPUP -------------------------------- */
+#popup {
+	margin-left: 0;
+	margin-right: 100px;
+	padding: 10px;
+}
+#popup.colL {
+	margin-left: 50px;
+}
+#popup.noColR {
+	margin-right: 0;
+} 
+
+
+/* ----------------------------- ? Increment 3 -------------------------------- */
+
+p.typeDecision {
+	background-color: #DCDCDE;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 2px 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+p.resultatCertif {
+	font-size: 0.8em;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+p.critereDecision {
+	font-size: 0.8em;
+	font-family: Helvetica, Arial, sans-serif;
+	padding-left: 5px;
+}
+
+td.critere {
+	background-color: #DCDCDE;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 2px 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width:70%;
+}
+
+td.decision {
+	background-color: #DCDCDE;
+	font-size: 0.8em;
+	font-weight: bold;
+	padding: 2px 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	width:30%;
+}
+
+td.infoCritere {
+	background-color: #fff;
+	font-size: 0.8em;
+	padding: 2px 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+td.infoDecision {
+	background-color: #fff;
+	font-size: 0.8em;
+	padding: 2px 5px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/***/
+
+/* La différence avec labellike, c'est qu'on permet le retour à la ligne */
+table th .wrap {
+	white-space: normal;
+}
+
+.fondAccueilIndicateurs{
+	background-color: #D2EBF9; /*#E8F8FA;*/ /*#e3f7fe;*/ /*#D2EBF9;*/
+	padding:5px;
+	border: 5px Solid #dedede;
+}
+
+table.fondAccueilIndicateurs td{
+	border-bottom: 1px solid White;
+}
+
+/** Element (pulse) d'attente ("throbber") lors du chargement d'une page **/
+
+p#throbber.noShow{
+	display:none;
+}
+
+p#throbber{
+	background: url(../images/throbber.gif) no-repeat 0 0;
+	display:block;
+	height:25px;
+	width:130px;
+	padding-left:30px;
+	padding-top:10px;
+	font-weight:bold;
+}
+
+textarea.xlarge {
+	height:100px;
+	width:400px;
+	font-size:11px;
+}
+
+/* ----------------------------- ? Saisie Decisions V2010 -------------------------------- */
+
+td.saisieDecisionBlock {
+	width: 33%;
+}
+
+td.formTdLabel {
+	width: 125px;
+}
+
+.formInput {
+	width: 150px;
+}
+
+ul.rapportXMLIntegreList {
+	margin-left:50px;
+}
+
+td.rapportXMLIntegreLabel {
+	width: 15%;	
+}	
+
+/* ----------------------------- ? Fin Saisie Decisions V2010 -------------------------------- */
+
+/** Element d'attente ("throbber") **/
+.throbberGenerique{
+	display:block;
+	height:28px;
+	padding-left:30px;
+
+	font-weight:bold;
+}
+/* ----------------------------- ? gestion des onglets Niveau de decision V2010 -------------------------------- */
+
+		.onglet
+        {
+                display:inline-block;
+                margin-left:3px;
+                margin-right:3px;
+                padding:3px;
+                border:1px solid black;
+                cursor:pointer;
+        }
+        .onglet_off
+        {
+               /* background:#bbbbbb; */
+                
+                background-color: #e8f8fa;
+                border-bottom:1px solid black;
+        }
+        .onglet_on
+        {
+               /* background:#dddddd;*/
+                background-color: #fff;
+                border-bottom:0px solid black;
+                padding-bottom:4px;
+        }
+        .contenu_onglet
+        {
+                
+                 /* border:1px solid black;*/
+                margin-top:-2px;
+                padding:10px;
+                display:none;
+        }
+        
+ /* ----------------------------- ? Fin gestion des onglets Niveau de decision V2010 -------------------------------- */
+ 
+/* ----------------------------- ? Manuel V2011 -------------------------------- */ 
+ 
+span.mettrenEnEvidenceCritere {
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+
+form table.tableformEAmain caption.mettrenEnEvidenceAppreciation {
+	width:100%;
+	color: #000000;
+	font-weight:bold;
+	font-style: italic;
+	text-align:left;
+	background: #F9A41E url(../images/bg_EAcaptionMettreEnEvidence.gif) top left repeat-x;
+	border:1px solid #00236F;
+	padding: 5px 4px;
+	margin: 10px 0 0;
+}
+/* ----------------------------- ? Fin Manuel V2011 -------------------------------- */
+ 
+/* Boite de chargement */
+.loading {								
+	font-weight: bold;
+	text-align: center;									        		    
+}
+
+/* JQuery UI DatePicker : correction affichage */
+.ui-datepicker { 
+	font-size: 75% !important;
+	color: rgb(54, 43, 54) !important;
+	background: url("../images/ui-bg_highlight-hard_100_f2f5f7_1x100.png") repeat-x scroll 50% top rgb(242, 245, 247) !important; 
+}
+
+.ui-datepicker-header { 
+	border: 1px solid rgb(174, 208, 234) !important;
+	background: url("../images/ui-bg_highlight-soft_100_deedf7_1x100.png") repeat-x scroll 50% 50% rgb(222, 237, 247) !important;
+	color: rgb(34, 34, 34) !important;
+	font-weight: bold !important;
+}
+
+.ui-datepicker-prev .ui-icon {
+	background-image: url(../images/ui-icons_72a7cf_256x240.gif) !important;
+	background-position: -80px -192px !important;
+	width: 16px !important;
+}
+
+.ui-datepicker-next .ui-icon {
+	background-image: url(../images/ui-icons_72a7cf_256x240.gif) !important;
+	background-position: -48px -192px !important;
+	width: 16px !important;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+	border: 1px solid rgb(174, 208, 234) !important;
+	background: url("../images/ui-bg_glass_80_d7ebf9_1x400.png") repeat-x scroll 50% 50% rgb(215, 235, 249) !important;
+	color: rgb(39, 121, 170) !important;
+	font-weight: bold !important;
+}
+
+.ui-datepicker-calendar .ui-state-highlight {
+	border: 1px solid rgb(249, 221, 52) !important;
+	background: url("../images/ui-bg_highlight-soft_25_ffef8f_1x100.png") repeat-x scroll 50% top rgb(255, 239, 143) !important;
+	color: rgb(54, 54, 54) !important;
+}
+
+.ui-datepicker-trigger {
+	margin: 0 4px;
+}
+
+img.ui-datepicker-trigger {
+	margin: 0 4px;
+}
+
+div.wins div.contain img.ui-datepicker-trigger {
+	margin: 0 4px;
+}
+
+/* JQuery UI Dialog : correction affichage */
+.ui-dialog {
+	font-size: 75%;
+}
+
+.ui-dialog .ui-dialog-content {
+	font-size: 125%;
+}
+
+.ui-dialog .ui-dialog-content p.infoLarge {
+    margin: 15px auto 30px;
+    padding: 5px 20px 5px 45px;
+    width: 80%;    
+}
+ 
+.ui-button {
+	font-size: 75%;
+}
+
+tr.currentactu {
+	font-weight: bold;
+}
+
+.ui-dialog .w25 {
+	width: 15%;
+}
+/* jQuery Validation */
+
+label.error {
+	background:url("../images/field-error.gif") no-repeat 0px 0px;
+	padding-left: 16px;
+	color: #FF0000;
+}
+
+label.success {
+	background:url("../images/field-valid.gif") no-repeat 0px 0px;
+	padding-left: 16px;
+	color: #008000;
+}
+
+td.titreValidation {
+	font-weight: bold;
+}
+
+td.messageValidation {
+	 font-style: italic;
+}
+
+table.infosStructureRattachee{
+	margin-bottom: 15px;
+}
+p.gras {
+	font-weight: bold;
+}
+
+td.titreValidation {
+	font-weight: bold;
+}
+
+td.messageValidation {
+	 font-style: italic;
+}
+
+table.infosStructureRattachee p{
+	 margin: 0px;
+	 color: #01458E;
+	 font-family: Arial,Helvetica,sans-serif;
+}
+
+table.validationVipes2014 p{
+	color: #6E7F89;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+table.infosStructureRattachee{
+	margin-bottom: 15px;
+}
+table.infosStructureRattachee p{
+	 margin: 0px;
+	 color: #01458E;
+	 font-family: Arial,Helvetica,sans-serif;
+}
+
+table.validationVipes2014 p{
+	color: #6E7F89;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+div table.activiteTable tr.pecpaire{
+	background-color: #93BEE5;
+	font-size: 1.1em;
+}
+
+div table.activiteTable tr.pecimpaire{
+	background-color: #F7F7F7;
+	font-size: 1.1em;
+}
+div table.activiteTable tr td.paddingLeft{
+	padding-left: 45px;
+}
+span.upperCase{
+	text-transform: uppercase;
+}
+.textGras{
+	font-weight: bold;
+}
+.block{
+	display: block;
+}
+.asLink{
+	color: #01458E;
+    text-decoration: underline;
+    cursor:  pointer;
+}
+
+table.tableHorsHAD tr td a.nonDesactivable img, table.tableHAD tr td a.nonDesactivable img {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+table.tableHorsHAD tr td, table.tableHAD tr td {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+table.tableform thead > tr:first-child th {
+    border-top: 1px solid #168BAA;
+}
+table.tableform thead.libCenter th.sepColRight {
+    border-right: 1px solid #168BAA;
+}
+table.tableHorsHAD, table.tableHAD {
+    margin-bottom: 20px;
+}
+table.tableHorsHAD td > div > p, table.tableHAD td > div > p{
+     font-size: 0.8em;
+}
+.noBorder{
+	border: none;
+}
+
+.size8em{
+	font-size: 0.8em;
+}
+
+.pianoTable{	
+	height:200px; /* idem HAUTEUR menu */
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	margin-top: -300px;
+	margin-left: 600px;
+}	
+	
+.pianoTr{
+	height: 80px;
+}
+
+.pianoTdHaut{
+	vertical-align: middle;
+	text-align: center;
+	border-style: solid none solid solid;
+	border-color: black -moz-use-text-color black black;
+	border-width: medium;
+	width:30px;
+	border-color: #ededed;
+	font-weight: bold;
+}
+
+.pianoTdBas{
+	vertical-align: middle;
+	vertical-align: middle;
+	text-align: left;
+	border-style: solid solid solid none;		
+	border-left: medium none;
+	border-color: #ededed;
+}
+
+.checkboxVert {
+    display:none;    
+}
+
+input[type=checkbox].checkboxVert + label.labelCheckboxVert {
+    padding-left:12px;    
+    height:30px; 
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+
+.labelCheckboxVert{ 
+    background-image:url("../images/uncheckBig.gif");   
+}
+
+.monSpan{
+    writing-mode:tb-rl;
+    /* Safari */
+	-webkit-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+    position:relative;
+    top:90px;
+    left:35px;
+}
+
+.ongletFPT {
+	display:inline-block;
+	margin-left:5px;
+	padding:3px;
+	border:1px solid black;
+	cursor:pointer;
+}
+
+.onglet_0 {
+	background:#bbbbbb;
+	border-bottom:1px solid black;
+	width: 100px;
+	margin-left: -1px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.onglet_1{
+	background:#dddddd;
+	border-bottom:0px solid black;
+	padding-bottom:4px;
+}
+
+.contenu_onglet {
+	border:1px solid black;
+	margin-top:-1px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:5px;
+	padding:5px;
+	display:none;
+}
+
+.monTDHaut{
+	width: 50px; 
+	height: 200px;
+	border-color: #eeeeee; 
+	border-style: solid solid none solid;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.monTDBas{
+	border-color: #eeeeee; 
+	border-style: none solid solid solid;
+	text-align: center;
+	height: 25px; 
+}
+
+.monTRChoisi{
+	background-color: #9fc5f8;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	height: 25px;
+}
+
+.maTable{
+	width: 90%;
+	border-collapse: collapse;
+}
+
+.monTableConstat{
+	border: 1px solid #000000;
+	width: 98%;
+	margin: 10px;
+}
+.monTRConstat{
+	border: 1px solid #000000;
+}
+
+textarea.textareaLarge {
+	font-size: 13px;
+}
+	
+span.makeitred {
+	color: red;
+}
+

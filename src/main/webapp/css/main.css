@@ -1,0 +1,3230 @@
+/* -------------------------------------------------------------------- 
+                         HAS
+                Main Screen Style sheet
+            By Le Studio, Atos Worldline, 2008
+                  Created on 07/2008
+-------------------------------------------------------------------- */
+	/*  Pour vos d?veloppements, NE PAS MODIFIER cette feuille de style  */
+	/*  mais DEV.CSS  */
+	/* --------------------------------------------------------------------- */
+	/* ----------------------------- ? DEFAULT VALUES -------------------------------- */
+
+html {
+	height: 100%;
+	width: 100%;	
+}	
+
+body {
+	height: 100%;
+	width: 100%;
+	font: 146% Arial, Helvetica, Sans-serif;
+	color: #000;
+	background: #FFF;
+	margin: 0 auto;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}  /* 0 for all objects */
+img {
+	border: 0;
+}
+
+p {
+	font-size: 0.7em;
+}
+
+p.alert,
+p.alertJS,
+#main p.attention,
+#main p.attentionLarge,
+#main p.confirm,
+#main p.info,
+#main p.infoLarge {
+	/*float: left;  Mis en commentaire novembre 08*/ 
+	width: 50%;
+	margin: 15px auto 30px auto;
+	padding: 5px 20px 5px 45px;
+	text-align: left;
+	font-size: 0.7em;
+	color: #ba161c;
+	background: #fff6bf url(../images/alert.gif) no-repeat 15px center;
+	border-top: 2px solid #ffd324;
+	border-bottom: 2px solid #ffd324;
+}
+
+#main p.attention,
+#main p.attentionLarge {
+	color: #000;
+	background: #e8f8fa url(../images/alert.gif) no-repeat 15px center;
+	border-top: 2px solid #168BAA;
+	border-bottom: 2px solid #168BAA;
+}
+#main p.attentionLarge {
+	width: 65%;
+}
+
+#main p.info,
+#main p.infoLarge {
+	color: #000;
+	background: #e8f8fa url(../images/info.gif) no-repeat 15px center;
+	border-top: 2px solid #168BAA;
+	border-bottom: 2px solid #168BAA;
+}
+#main p.infoLarge {
+	width: 65%;
+}
+#main table p.infoLarge {
+	font-size: 11px;
+}
+#main p.confirm {
+	color: #000;
+	background: #eaff9f url(../images/confirm.gif) no-repeat 15px center;
+	border-top: 2px solid #b0c27a;
+	border-bottom: 2px solid #b0c27a;
+}
+
+#main p.info img,
+#main p.infoLarge img,
+#main p.confirm img,
+#main p.attention img,
+#main p.attentionLarge img {
+	margin: 0;
+}
+p.date {
+	color: #3e5462;
+	margin: 4px 0;
+}
+
+h3 {
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 1.08em;
+	color: #3a6ca0;
+}
+
+h4 {
+	padding: 6px 0 0 15px;
+	margin: 0 0 10px 4px;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 1.08em;
+	color: #3a6ca0;
+	background: url(../images/puceTitres.gif) no-repeat 0;
+}
+
+h5 {
+	font-size: 0.7em;
+	margin: 4px 0;
+}
+
+a.link {
+	padding-left: 10px;
+	text-decoration: none;
+	color: #3e5462;
+	background: url(../images/link.gif) no-repeat 0 4px;
+}
+
+p.link {
+	margin-top: 5px;
+}
+
+address {
+	font-size: 0.8em;
+	border: 1px solid #000;
+	font-style: normal;
+	padding: 5px 10px;
+	margin: 10px 5px;
+	width: 40%
+}
+
+/* ----------------------------- FORMULAIRES -------------------------------- */
+#main fieldset.identification {
+	border: none;
+	width: 175px;
+	margin-left: 40px;;
+}
+
+#main fieldset.identification legend {
+	display: none;
+}
+
+#main fieldset.identification input {
+	width: 175px;
+	height: 24px;
+	margin: -6px 0 10px 4px;
+	_margin: -7px 0 10px 4px;
+	padding: 4px 0 0 0;
+	border: none;
+	background: url(../images/inputD.gif) no-repeat right;
+}
+
+#main fieldset.identification span.input {
+	display: block;
+	width: 4px;
+	height: 24px;
+	margin: 4px 0 10px 0;
+	padding: 4px 0 0 0;
+	background: url(../images/inputG.gif) no-repeat 0 0;
+}
+
+select,textarea,input {
+	padding: 1px 2px;
+	border: 1px solid #7f9db9;
+}
+
+.noborder {
+	border: none !important;
+}
+
+option {
+	padding-right: 8px;
+}
+.topfs {
+	padding: 15px 0 5px 0;
+	text-align: left;
+}
+
+/* ----------------------------- HEADER -------------------------------- */
+h1 {
+	float: left;
+}
+
+h2 {
+	float: right;
+	padding: 5px 10px 0 0
+}
+
+#header {
+	height: 94px;
+	margin: 10px 10px 0 10px;
+}
+
+#header div.topTools {
+	float: right;
+	width: 190px;
+	height: 80px;
+}
+
+#header div.topTools p {
+	text-align: right;
+	vertical-align: middle;
+}
+
+#header div.topTools p.noSearch {
+	padding-top: 35px;
+}
+
+div.topTools a {
+	float: right;
+	width: 40px;
+	height: 16px;
+	margin-left: 20px;
+	border-left: 1px solid #A5A5A5;
+}
+
+/* ----------------------------- ONLY HOME PAGE -------------------------------- */
+#hpIllustr {
+	margin: 0 10px;
+}
+
+#hpIllustr p.illustrations {
+	background: url(../images/illustrHP_BG.gif) repeat-x;
+}
+
+#hpIllustr img.iRight {
+	float: right;
+}
+
+#hpIllustr div.headInfo {
+	float: right;
+	width: 180px;
+	height: 141px;
+	padding: 10px 0 10px 10px;
+	background: #FFF url(../images/pointill_V.gif) repeat-y left;
+}
+
+#hpIllustr div.headInfo p {
+	height: 110px;
+	margin-top: 8px;
+	color: #3e5462;
+	overflow: auto;
+	border: 1px solid #FFF;
+}
+
+/* ----------------------------- ? RUBRIQUES -------------------------------- */
+
+#sepRub.deconnect {
+	background: #7AFC24 url(../images/bg_rub_deconnect.gif) no-repeat left;
+}
+
+div.connect {
+	background: #E3E3E3 url(../images/pointill_Vrub.gif) repeat-y scroll right center;
+	float: left;
+	width: 100%;
+}
+
+#sepRub {
+	border-bottom: 1px solid #FFF;
+}
+
+#sepRub ul {
+	list-style: none;
+}
+
+
+#sepRub li {
+	display: inline;
+	background: url(../images/rub_inactiv.gif) no-repeat;
+	padding: 5px 0pt 6px 13px;
+	margin-right: 10px;
+	height: 29px;
+	line-height: 29px;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 0.8em;
+}
+
+#sepRub li.activ {
+	color: #434343;
+	background: url(../images/rub_activ.gif) no-repeat;
+}
+
+#sepRub ul.connect li
+{
+	background: url(../images/rub_inactiv.gif) no-repeat;	
+}
+	
+#sepRub ul.connect li.activ
+{
+	background: url(../images/rub_activ.gif) no-repeat;	
+}	
+	
+#sepRub ul.deconnect li
+{
+	background: url(../images/rub_inactiv_deco.gif) no-repeat;	
+}
+	
+#sepRub ul.deconnect li.activ
+{
+	background: url(../images/rub_activ_deco.gif) no-repeat;	
+}	
+
+
+#sepRub li a,#sepRub li a:link,#sepRub li a:visited {
+	color:#054E01;
+	text-decoration: none;
+}
+
+#sepRub li a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#sepRub li.activ a,#sepRub li.activ a:link,#sepRub li.activ a:visited {
+	color:#000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+.connect #login {
+	float: right;
+	width: 180px;
+	color: #00458d;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: left;
+	padding: 0 0 0 10px
+}
+.deconnect #login {
+	float: right;
+	width: 180px;
+	color: #00458d;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: left;
+	background: #0B9703;
+	padding: 0 0 0 10px
+}
+
+#login p.deconnect {
+	float: right;
+	padding-right: 5px;
+}
+
+#login p.deconnect a,#login p.deconnect a:link,#login p.deconnect a:visited
+	{
+	color: #00458d;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+#sepRub.deconnect p, #sepRub.deconnect p a:link, #sepRub.deconnect p a:visited {
+	color: #FFF;
+}
+#sepRub.deconnect p a:link, #sepRub.deconnect p a:visited {
+	text-decoration: underline
+}
+
+/* ----------------------------- COL LEFT -------------------------------- */
+#colL {
+	display: inline;
+	float: left;
+	width: 140px;
+}
+
+#blocMenu {
+	margin-top: 12px;
+}
+
+#blocMenu .accordion_toggle,#blocMenu .no_accordion,#blocMenu .no_accordion_select
+	{
+	display: block;
+	padding: 4px 0 4px 13px;
+	font-size: 0.7em;
+	font-weight: bold;
+	color: #6d7f89;
+	background: #e3f7fe url(../images/fl_menu_B.gif) no-repeat 98% 5px;
+	border-top: 3px solid #a9ccdf;
+	border-bottom: 1px solid #d8d8d8;
+	cursor: pointer;
+}
+
+#blocMenu .no_accordion {
+	background: #e3f7fe;
+}
+
+#blocMenu .no_accordion a {
+	color: #6d7f89;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#blocMenu .no_accordion_select {
+	background: #FFF;
+}
+
+#blocMenu .no_accordion_select a {
+	color: #01458e;
+	font-weight: bold;
+}
+
+#blocMenu .no_accordion_select a:link, #blocMenu .no_accordion_select a:visited {
+	text-decoration: none;
+}
+
+#blocMenu .accordion_toggle_active {
+	color: #01458e;
+	background: #FFF url(../images/fl_menu_H.gif) no-repeat 98% 5px;
+}
+
+#blocMenu .accordion_content {
+	background: #FFF;
+	overflow: hidden; /* PAS FLUIDE SI PAS PRECISE :-( */
+}
+
+#blocMenu ul {
+	list-style: none;
+}
+
+#blocMenu li {
+	border-bottom: 1px solid #FFF;
+	font-size: 0.7em;
+}
+
+#blocMenu li.select {
+	padding: 3px 0 5px 13px;
+	color: #666;
+	background: #FFF;
+	font-weight: bold;
+}
+
+#blocMenu li a,#blocMenu li a:link,#blocMenu li a:visited {
+	display: block;
+	padding: 3px 0 5px 13px;
+	color: #007dc9;
+	background: #FFF;
+	text-decoration: none;
+}
+
+#blocMenu li a:hover {
+	text-decoration: underline;
+	color: #036;
+}
+
+/* ----------------------------- ? COL RIGHT -------------------------------- */
+#colR {
+	float: right;
+	width: 190px;
+	background: url(../images/pointill_V.gif) repeat-y left;
+}
+
+div.blocActu {
+	width: auto;
+	padding: 10px;
+	margin-left: 1px;
+	margin-right: 10px;
+	background: #d5d5d5;
+}
+
+div.blocAide {
+	width: auto;
+	padding: 10px;
+	padding-left: 20px;
+	margin-left: 1px;
+	background: #d5d5d5;
+}
+
+div.blocAide p {
+	margin-bottom: 10px;
+}
+
+div.blocAide img {
+	vertical-align: top;
+	margin-right: 5px;
+}
+
+#barRetract {
+	float: left;
+	display: inline;
+	width: 7px;
+	height: 100%;
+	margin: 0 0 0 1px;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+	background: #FFF url(../images/bg_retract_D.gif) repeat-y 55%;
+}
+
+#barRetract.close {
+	background: #FFF url(../images/bg_retract_G.gif) repeat-y 55%;
+}
+
+/* ----------------------------- ? MAIN -------------------------------- */
+#main {
+	margin-left: 0;
+	margin-right: 200px;
+	padding: 10px;
+}
+
+#main.colL {
+	margin-left: 150px;
+}  /* NE PAS DEPLACER !!!!!!!!!!! */
+#main.noColR {
+	margin-right: 0;
+}  /* NE PAS DEPLACER !!!!!!!!!!! */
+#wrapper {
+	display: inline;
+	float: left;
+	/*height: 100%;*/
+	width: 100%;
+}
+
+p.afterCheck {
+	padding-left: 30px;
+}
+
+#steps {
+	clear: left;
+	margin: 20px 0;
+	text-align: center;
+}
+
+#steps ul {
+	list-style: none;
+}
+
+#steps li {
+	display: inline;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 0.9em;
+	color: #A5A5A5;
+}
+
+#steps li.active {
+	color: #6D7F89;
+}
+
+#steps li img {
+	margin: 0 4px 7px 20px;
+	vertical-align: middle;
+}
+
+#steps li a,#steps li a:link,#steps li a:visited {
+	color: #3a6ca0;
+	text-decoration: none;
+}
+
+#steps li a:hover {
+	color: #3E5462;
+}
+
+#histo {
+	border-top: 1px solid #A5A5A5;
+	border-bottom: 1px solid #A5A5A5;
+	list-style: none;
+	margin: 10px 0;
+	font-size: 0.7em;
+	font-weight: bold;
+	padding: 10px;
+	width: auto;
+}
+
+#histo li img {
+	vertical-align: middle;
+}
+
+#histo li.check {
+	color: #000;
+	padding: 7px 0 3px 25px;
+	/*height: 22px;*/
+}
+
+#histo li.unCheck {
+	color: #7c9db2;
+	padding: 7px 0 3px 25px;
+	/*height: 22px;*/
+}
+
+#histo li.selectCheck {
+	color: #000;
+	padding: 7px 0 3px 25px;
+	/*height: 22px;*/
+}
+
+#histo ul {
+	width: auto;
+	margin: 10px 0 10px 25px;
+	_margin: 5px 0 10px 25px;
+	padding: 10px;
+	list-style: none;
+	font-weight: bold;
+	background: #E3E3E3;
+}
+
+#histo li.checkMini {
+	color: #000;
+	font-style: normal;
+	padding: 7px 0 0 25px;
+	height: 22px;
+}
+
+#histo li.checkMini a,#histo li.checkMini a:link,#histo li.checkMini a:visited
+	{
+	color: #000;
+	text-decoration: underline;
+}
+
+#histo li.unCheckMini {
+	color: #7c9db2;
+	font-style: normal;
+	padding: 7px 0 0 25px;
+	height: 22px;
+}
+
+#histo li.unCheckMini a,#histo li.unCheckMini a:link,#histo li.unCheckMini a:visited
+	{
+	color: #7c9db2;
+	text-decoration: underline;
+}
+
+#histo li.checkMini img,#histo li.unCheckMini img {
+	padding: 0 11px 0 0;
+	margin-left: -25px;
+	vertical-align: text-bottom;
+}
+
+#histo li.etat {
+	color: #000;
+	font-style: italic;
+	padding: 5px 0 0 25px;
+	_padding: 0 0 0 25px;
+	min-height: 1px;
+	height: auto;
+}
+
+div h5 {
+	margin: 10px 0 20px 0;
+	float: left;
+	width: auto;
+	padding: 10px;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 0.8em;
+	background: #dcdcde;
+}
+
+div h5 img {
+	padding-bottom: 2px;
+	vertical-align: middle;
+}
+
+div h6 {
+	float: right;
+	line-height:14px;
+	margin-top:14px;
+	color: #054E01;
+	font-size: 11px;
+	border-bottom: 1px dotted #999;
+}
+
+div.demarche {
+	float: left;
+	width: 100%;
+}
+
+ul.onglets {
+	list-style: none;
+	border-bottom: 4px solid #b0c27a;
+	padding-bottom: 4px;
+	_padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+ul.onglets li {
+	display: inline;
+	padding: 4px 2px 4px 0;
+	margin-right: 4px;
+	background: url(../images/bg_ongletInact_D.gif) no-repeat right;
+	font-size: 0.7em;
+}
+
+ul.onglets li span {
+	padding: 3px 3px 3px 6px;
+	background: url(../images/bg_ongletInact_G.gif) no-repeat;
+}
+
+ul.onglets li.actif {
+	font-weight: bold;
+	background: url(../images/bg_ongletAct_D.gif) no-repeat right;
+}
+
+ul.onglets li.actif span, ul.onglets li.tab_displayed span {
+	background: url(../images/bg_ongletAct_G.gif) no-repeat;
+}
+
+ul.onglets li.inactif {
+	color: #999;
+}
+
+ul.onglets a,ul.onglets a:link,ul.onglets a:visited {
+	color: #000;
+	text-decoration: none
+}
+
+ul.onglets a:hover {
+	text-decoration: underline;
+}
+
+#main p.topbouton {
+	padding-bottom: 15px;
+}
+
+p.important {
+	font-size: 1.1em;
+	color: #168BAA;
+	margin: 10px 0;
+}
+
+div.encart290 {
+	width: 250px;
+	height: 295px;
+	padding: 20px;
+	background: url(../images/bg_encart290.gif) no-repeat;
+	margin: 0 auto;
+}
+
+div.encart290 h5 {
+	float: none;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+#colR h5,#blocMenu h5 {
+	float: none;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	font-size: 0.7em;
+	margin: 4px 0;
+}
+
+.noticeform {
+	font-size: 0.7em;
+	font-weight: bold;
+	text-align: right;
+}
+
+form {
+	margin: 5px 0;
+	height: 100%;
+}
+
+form fieldset {
+	border: none;
+	width: 98%;
+}
+
+form fieldset legend,
+div.wins form fieldset legend,
+p.libelleQuestion {
+	text-transform:uppercase;
+	color: #6e7f89;
+	font-size: 0.7em;
+	font-weight: bold;
+	padding: 15px 0 2px 0;
+}
+
+span.legend,
+p.libelleQuestion {
+	/*float: left;*/
+	width: 100%;
+	/*border-bottom: 1px solid #cfcfcf;*/
+	border-bottom:1px dotted #000000;
+	color:#737F50;
+	margin: 0 0 15px 0;
+}
+
+/*#main label, div.wins label {text-align:right; clear:left; padding-right:5px; color:#01458e; line-height: 16px;}*/
+label {
+	text-align: right;
+	clear: left;
+	padding-right: 5px;
+	color: #01458e;
+	line-height: 22px;
+}
+
+div.wins label {
+	text-align: right;
+	clear: left;
+	padding-right: 5px;
+	color: #01458e;
+	line-height: 16px;
+}
+
+form input, form select, form textarea {
+	font-size: 0.9em;
+}
+
+form textarea.textareaGrand {
+	font-size: 1.2em;
+}
+
+form p {
+	margin: 5px 0;
+	font-size: 0.8em;
+}
+
+form p a img {
+	vertical-align: top;
+	border: none;
+}
+
+table.tableform {
+	width:98%;
+	border: 1px solid #168baa;
+	font-size: 0.75em;
+}
+
+table.tableform caption {
+	border: 1px solid #168baa;
+	border-top: 2px solid #168baa;
+	color: #fff;
+	font-size: 11px;
+	_font-size: 0.9em;
+	font-weight: bold;
+	text-align: left;
+	background: #3db9ed url(../images/bg_tabcaption.gif) repeat-x;
+	padding: 2px 5px;
+}
+
+table.tableform caption .action {
+	float: right;
+}
+table.tableform caption .action a {
+	color: #fff;
+	text-decoration: none;
+}
+table.tableform caption .action a:hover {
+	text-decoration: underline;
+}
+
+form table.tablefiltre {
+	border: 1px solid #3b474e;
+}
+
+form table.tablefiltre caption {
+	background: #3db9ed url(../images/bg_filtrcaption.gif) repeat-x;
+	border: 1px solid #3b474e;
+}
+
+form table.tableform .filtre {
+	float: right;
+}
+
+table.tableform thead {
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+	background: #f4f4f4 url(../images/bg_tabheader.gif) repeat-x;
+}
+
+table.tableform thead th {
+	border-bottom: 1px solid #168baa;
+}
+
+table.tableform thead th {
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+}
+
+table.tableform thead th a,table.tableform thead th a:link,table.tableform thead th a:visited
+	{
+	color: #6e7f89;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+table.tableform thead th.up a,table.tableform thead th.up a:link,table.tableform thead th.up a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablUp.gif) no-repeat right
+}
+
+table.tableform thead th.down a,table.tableform thead th.down a:link,table.tableform thead th.down a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablDown.gif) no-repeat right;
+}
+
+table.tableform tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+table.tableform tbody .principal {
+	background-color: #e8f8fa;
+	font-weight: bold
+}
+
+table.tableform tbody .gcs {
+	background-color: #e1ffe1;
+}
+
+table.tableform tbody .principal input {
+	font-weight: bold
+}
+
+table.tableform tbody th {
+	padding: 5px 2px 5px 5px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+/* tableau pour présentation des activités gcs */
+
+form table.tableforminsidegcs {
+	width:100%;
+}
+
+
+form table.tableformgcs {
+	width:100%;
+	border: 1px solid #168baa;
+	font-size: 0.75em;
+}
+
+form table.tableformgcs caption {
+	border: 1px solid #168baa;
+	border-top: 2px solid #168baa;
+	color: #fff;
+	font-size: 11px;
+	_font-size: 0.9em;
+	font-weight: bold;
+	text-align: left;
+	background: #3db9ed url(../images/bg_tabcaption.gif) repeat-x;
+	padding: 2px 5px;
+}
+
+form table.tableformgcs caption .action {
+	float: right;
+}
+form table.tableformgcs caption .action a {
+	color: #fff;
+	text-decoration: none;
+}
+form table.tableformgcs caption .action a:hover {
+	text-decoration: underline;
+}
+
+form table.tableformgcs .filtre {
+	float: right;
+}
+
+form table.tableformgcs thead {
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+	background: #f4f4f4 url(../images/bg_tabheader.gif) repeat-x;
+}
+
+form table.tableformgcs thead th {
+	border-bottom: 1px solid #168baa;
+	border-right: 1px solid #168baa;
+}
+
+form table.tableformgcs thead th {
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+}
+
+form table.tableformgcs thead th a,form table.tableformgcs thead th a:link,form table.tableformgcs thead th a:visited
+	{
+	color: #6e7f89;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+form table.tableformgcs thead th.up a,form table.tableformgcs thead th.up a:link,form table.tableformgcs thead th.up a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablUp.gif) no-repeat right
+}
+
+form table.tableformgcs thead th.down a,form table.tableformgcs thead th.down a:link,form table.tableformgcs thead th.down a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablDown.gif) no-repeat right;
+}
+
+form table.tableformgcs tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+form table.tableformgcs tbody .principal {
+	background-color: #e8f8fa;
+	font-weight: bold
+}
+
+form table.tableformgcs tbody .principal input {
+	font-weight: bold
+}
+
+form table.tableformgcs tbody th {
+	padding: 5px 2px 5px 5px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+
+
+/* tableau dans cadre historique */
+table.tableformHisto {
+	width: 98%;
+	font-size: 0.65em;
+}
+
+table.tableformHisto thead{
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+form table.tableformHisto thead th {
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+	border-bottom: 1px solid #168baa;
+}
+
+table.tableformHisto thead tr th {
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+	background-color: #D9D9D9;
+}
+
+table.tableformHisto tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+/* table formulaire d'aide */
+form table.tableformhelp {
+	width: 98%;
+	border: 1px solid #ffccff;
+	font-size: 0.75em;
+}
+
+form table.tableformhelp caption {
+	border: 1px solid #ffccff;
+	border-top: 2px solid #ffccff;
+	color: #fff;
+	font-size: 11px;
+	_font-size: 0.9em;
+	font-weight: bold;
+	text-align: left;
+	background: #3db9ed url(../images/bg_tabcaptionhelp.gif) repeat-x;
+	padding: 2px 5px;
+}
+
+form table.tableformhelp caption .action {
+	float: right;
+}
+form table.tableformhelp caption .action a {
+	color: #fff;
+	text-decoration: none;
+}
+form table.tableformhelp caption .action a:hover {
+	text-decoration: underline;
+}
+
+form table.tableformhelp .filtre {
+	float: right;
+}
+
+form table.tableformhelp thead {
+	color: #6e7f89;
+	font-size: 0.9em;
+	text-align: center;
+	background: #f4f4f4 url(../images/bg_tabheader.gif) repeat-x;
+}
+
+form table.tableformhelp thead th {
+	border-bottom: 1px solid #ffccff;
+}
+
+form table.tableformhelp thead th {
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+}
+
+form table.tableformhelp thead th a,form table.tableformhelp thead th a:link,form table.tableformhelp thead th a:visited
+	{
+	color: #6e7f89;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+form table.tableformhelp thead th.up a,form table.tableformhelp thead th.up a:link,form table.tableformhelp thead th.up a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablUp.gif) no-repeat right
+}
+
+form table.tableformhelp thead th.down a,form table.tableformhelp thead th.down a:link,form table.tableformhelp thead th.down a:visited
+	{
+	font-weight: bold;
+	background: url(../images/tablDown.gif) no-repeat right;
+}
+
+form table.tableformhelp tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+form table.tableformhelp tbody .principal {
+	background-color: #e8f8fa;
+	font-weight: bold
+}
+
+form table.tableformhelp tbody .principal input {
+	font-weight: bold
+}
+
+form table.tableformhelp tbody th {
+	padding: 5px 2px 5px 5px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+/* table des filtres */
+form table.tablefiltre {
+	background: #d2ebf9 url(../images/bg_tabfiltre.gif) repeat-x;
+	margin-bottom: 10px;
+}
+
+form table.tableform tbody.tbfiltre {
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+form table.tableform tbody.tbfiltre td {
+	border: none;
+}
+
+form table.tableform tbody.tbfiltre .labelfiltre {
+	text-align: right;
+}
+
+form table.tableform tbody.tbfiltre .labelfiltre label {
+	font-size: 1em;
+}
+
+form table.tableform tbody.tbfiltre .ipRadio label {
+	font-size: 1em;
+	padding-left: 3px;
+}
+
+form table.tableform tbody.tbfiltre .ipRadio input {
+	vertical-align: middle;
+}
+
+form table.tableform tbody.tbfiltre img {
+	vertical-align: middle;
+}
+
+form table.tableform tbody.tbfiltre img.boutonRaz {
+	padding: 1px 2px;
+	vertical-align: top;
+}
+
+/* alternance lignes paires/impaires */
+table.tableform tbody .lignepaire {
+	background-color: #e8f8fa;
+	font-size: 0.9em;
+}
+
+form table.tableforminsidegcs tbody .lignepaire {
+	background-color: #e8f8fa;
+}
+
+form table.tableformhelp tbody .lignepairerose {
+	background-color: #ffccff;
+	font-size: 0.9em;
+}
+form table.tableformhelp tbody .ligneimpaire {
+	background-color: #fff;
+	font-size: 0.9em;
+}
+
+table.tableform tbody .ligneimpaire {
+	background-color: #fff;
+	font-size: 0.9em;
+}
+
+form table.tableform tbody .ligneRouge {
+	background-color: #fe9d9d;
+	/*font-weight:bold;*/
+	font-size: 0.9em;
+}
+
+form table.tableform tbody .ligneVerte {
+	background-color: #e1fee4;
+	/*font-weight:bold;*/
+	font-size: 0.9em;
+}
+
+form table.tableform tbody .ligneBleue {
+	background-color: #01458E;
+	font-size: 1em;
+	color:white;
+	font-weight:bold;
+}
+
+form table.tableforminsidegcs tbody .ligneimpaire {
+	background-color: #fff;
+}
+
+/* ligne spéciale ajout */
+form table.tableform tbody .ligneajout {
+	background-color: #f3b31a;
+	font-size: 0.9em;
+}
+
+form table.tableform tbody .lignepaire td,form table.tableform tbody .ligneimpaire td,form table.tableform tbody .ligneajout td
+	{
+	padding: 5px 5px;
+}
+
+form table.tableform tbody .lignepaire th,form table.tableform tbody .ligneimpaire th,form table.tableform tbody .ligneajout th
+	{
+	text-align: left;
+	vertical-align: bottom;
+}
+
+form table.tableform td a,form table.tableform td a:link,form table.tableform td a:visited, #main table.alone td a:link, #main table.alone td a:visited 
+{
+	text-decoration: none;
+	color: #01458e;
+	font-weight: bold;
+}
+
+form table.tableform td a:hover, #main table.alone td a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+th {
+	text-transform: uppercase;
+}
+
+form table.tableform thead.libCenter th {
+	text-align: center;
+}
+
+form table.tableformgcs thead.libCenter th {
+	text-align: center;
+}
+
+form table.tableformgcs tbody td 
+{
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #168baa;
+}
+
+
+form table.tableform thead.libCenter th.sepColRight {
+	border-right: 1px solid #168BAA;
+}
+
+form table.tableform .ligneTotal {
+	background-color: #168baa;
+	color: #FFF;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+form table.tableform .ligneSsTotal {
+	background-color: #E3E3E3;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+form table.tableforminsidegcs .ligneTotal {
+	background-color: #168baa;
+	color: #FFF;
+	font-weight: bold;
+}
+
+form table.tableforminsidegcs .ligneSsTotal {
+	background-color: #E3E3E3;
+	font-weight: bold;
+}
+
+form table.tableSynthese {
+	width: 40%;
+	margin: 0 20px;
+	text-align: left;
+	font-size: 11px;
+}
+
+table a.linkDetail:link, table a.linkDetail:visited {
+	display:inline-block;
+	padding: 2px 0 1px 17px;
+	text-decoration: none;
+	color:#01458E;
+	background: url(../images/picto_detail.gif) no-repeat 0 2px;
+}
+table a.linkDetail:hover {
+	color:#007DC9;
+	background: url(../images/picto_detail_on.gif) no-repeat 0 2px;
+}
+
+form table.tablW80 {
+	width: 80%;
+}
+form table.tablW100 {
+	width: 99%;
+}
+
+form table.tableSynthese td, form table.tableSynthese th {
+	border-bottom: 1px solid #a9ccdf;
+	padding: 0 8px;
+	}
+form table.tableSynthese th {
+background:#FFFFFF url(../images/bg_blocGris.gif) repeat-x scroll center top;
+}
+
+form table.tableform .tCenter, form table.tableSynthese .tCenter, form table.tableformhelp .tCenter, form table.tableforminsidegcs .tCenter {
+	text-align: center;
+}
+
+/*  scrolling table */
+form table.tableform tbody td.scrollContent {
+	padding: 0;
+}
+
+td.scrollContent div {
+	height: 100px;
+	overflow: auto;
+}
+
+td.scrollContent div.bigger {
+	height: 195px;
+	overflow: auto;
+}
+
+table.scrollingTable {
+	width: 100%;
+	_width: 97%;
+}
+
+table.col4 td,table.col4 th {
+	width: 25%;
+}
+
+table.col5 td,table.col5 th {
+	width: 20%;
+}
+
+table.col8 td {
+	width: 12%;
+}
+
+table.col4 td.colRadio,table.col4 th.colRadio,table.col5 td.colRadio,table.col5 th.colRadio,table.col8 td.colRadio,table.col8 th.colRadio
+	{
+	width: 30px;
+}
+
+table.col8 .colRadio input {
+	border: none;
+}
+
+table.col4 td.colPrincipale,table.col4 th.colPrincipale,table.col5 td.colPrincipale,table.col5 th.colPrincipale
+	{
+	width: 100%;
+}
+
+table.col8 td.colPrincipale,table.col8 th.colPrincipale {
+	width: 25%;
+}
+
+thead.fixHeader th.colDouble {
+	width: 24%;
+}
+
+td.actions {
+	white-space: nowrap;
+}
+
+td.actions img {
+	padding-left: 10px;
+}
+
+table th strong {
+	line-height: 18px;
+	font-weight: normal;
+	text-transform: none;
+	color: #000;
+}
+table th .labellike {
+	color: #01458e;
+	font-size: 0.9em;
+	padding-right: 5px;
+	white-space:nowrap;
+}
+table th .labellike strong {font-weight: bold; color:#01458E;}
+
+table tr.thTop th, table tr.thTop td {
+	vertical-align: top;
+}
+
+form table.tableform tr.tdCenter td,form table.tableform tr.tdCenter th {
+	text-align: center;
+}
+form table.tableformhelp tr.tdCenter td,form table.tableformhelp tr.tdCenter th {
+	text-align: center;
+}
+
+table th table {
+	margin: 0 auto;
+}
+
+form table.tableform th table td {padding: 0; }
+form table.tableform td.noBg { background: #FFF; }
+form table.tableform th.tdGrise { background: #eeede9; }
+form table.tableform th.tdGrise label, table th.tdGrise strong { color: #6c7e88; }
+form table.tableform tr.lignepaire td.tdGrise { background: #eee; }
+form table.tableform tr.ligneimpaire td.tdGrise { background: #eee;}
+form table.tableformhelp th.tdGrise { background: #eeede9; }
+form table.tableformhelp th.tdGrise label, table th.tdGrise strong { color: #6c7e88; }
+form table.tableformhelp tr.lignepairerose td.tdGrise { background: #f9e6f9; }
+form table.tableformhelp tr.ligneimpaire td.tdGrise { background: #f2f1ed;}
+form table.tableform tr.ligneSepar {
+	background: url(../images/bg_tabheader.gif) repeat-x 0 50%;
+}
+
+/* sous-tableaux de données */
+form table.tableform table.subtableform tbody td {border:none; font-size:1em; padding:0;}
+form table.tableform table.subtableform tbody td.refus {padding: 2px 0 5px;}
+form table.tableform tbody td.refus {color:#F00;}
+form table.subtableform td textarea {font-size:1em; margin-bottom:2px;}
+form table.subtableform td textarea.textareaGrand {font-size:1.2em; margin-bottom:2px;}
+form table.subtableform td input {vertical-align: middle;}
+form table.subtableform td select {margin-bottom:2px;}
+
+form table.tableform {
+	margin-bottom: 20px;
+}
+
+form table.tableform .thNegatif {
+	color: #FFF;
+	background: #A5A5A5;
+	border-color: #FFF;
+	border-top: 2px solid #FFF;
+	border-left: 2px solid #FFF;
+}
+form table.tableform tr.grayBorder th {border-color: #E3E3E3; }
+form table.tableform tr th.horsTable {
+	width: 20px;
+	background: #FFF;
+	border-color: #FFF;
+}
+
+form table.tableform tr td.horsTable {
+	width: 20px;
+	background: #FFF;
+	border-color: #FFF;
+}
+
+form table.tableform thead tr{
+	/*position: relative;*/
+}
+
+form table.tableform .tableCache {
+	position: absolute;
+	margin: -1px 0 0 -3px;
+	width: 981px;
+	height: 94px;
+	background: url(../images/bg_opac.png) repeat;
+}
+
+
+* html form table.tableform .tableCache {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="images/bg_opac.png", sizingMethod="scale");
+	background-image:none;
+	z-index: 0;
+}
+
+form table.tableform td .btVert a, form table.tableform td .btVert a:link, form table.tableform td .btVert a:visited {
+	color:#189D10;
+}
+form table.tableform td .btVert a:hover { text-decoration: none;}
+form table.tableform td .btVert{	margin-right: 28px;}
+
+
+/* exception de tableau */
+form table.tbHaut td {vertical-align: top;}
+form table.tablehidden2col.tbHaut th {vertical-align: top;}
+form table.tablemoy {width: 55%;}
+
+.tableform.tablemoy {
+    width: 55%;
+}
+
+input.etsPrincipal {
+	padding: 1px 0 1px 15px;
+	background: #FFF url(../images/bg_input_EtsPrincipal.gif) no-repeat 2px
+		2px;
+	border: 1px solid #7f9db9;
+}
+
+tr.secondaire input {
+	margin-left: 16px;
+}
+
+tr.entJuridiq td, p .entJuridiq {
+	font-weight : bold;
+}
+tr.structArchiv td, p .structArchiv {
+	font-style : italic;
+	color: #666666;
+}
+
+#infoValid,#infoRefus {
+	display: none;
+	float: left;
+	width: 97%;
+	border: 1px solid #D5D5D5;
+	margin-left: 75px;
+	padding: 10px;
+}
+
+#infoValid input {
+	margin: 4px 0 2px 0;
+}
+
+#infoValid img,#infoRefus img {
+	margin: 10px 0 0 15px;
+}
+
+#main p.fRadio input,#definitif,#temporaire {
+	margin: 4px 4px -1px 0;
+}
+
+#main p.fRadio label {
+	clear: none;
+}
+
+/* pagination */
+#main div.pagination, div.wins div.pagination {
+	margin: 20px 0;
+}
+
+#main div.pagination fieldset, div.wins div.pagination fieldset {
+	display: inline;
+	width: auto;
+	border: 1px solid #a9a9a9;
+	padding: 0 5px;
+}
+
+#main div.pagination legend, div.wins div.pagination legend {
+	padding: 0 5px;
+}
+
+#main div.pagination p,div.wins div.pagination p {
+	font-size: 0.7em;
+}
+
+#main div.pagination ul,div.wins div.pagination ul {
+	float: right;
+	margin-top: 20px;
+	list-style: none;
+	font-size: 0.7em;
+}
+
+#main div.pagination li,div.wins div.pagination li {
+	display: inline;
+	padding: 0 4px;
+	margin: 0 1px;
+	border: 1px solid #a9a9a9;
+	color: #000;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+#main div.pagination li.zap,div.wins div.pagination li.zap {
+	border: none;
+}
+
+#main div.pagination li.noLink,div.wins div.pagination li.noLink {
+	color: #a9a9a9;
+	font-weight: normal;
+}
+
+#main div.pagination a,#main div.pagination a:link,#main div.pagination a:visited,div.wins div.pagination a,div.wins div.pagination a:link,div.wins div.pagination a:visited
+	{
+	text-decoration: none;
+	color: #01458e;
+	font-weight: normal;
+}
+
+#main div.pagination a:hover,div.wins div.pagination a:hover {
+	color: #000;
+}
+
+/* table de mep sans bordure */
+#main table.tablehidden2col { /*clear: both;*/
+	border: none;
+	margin: 25px 0;
+	font-size: 0.8em;
+}
+
+#main table.tablehidden2col th,#main table.tablehidden2col td.labelRight
+	{
+	text-align: right;
+	padding: 2px 0
+}
+
+#main table.tablehidden2col img {
+	padding-left: 5px;
+	vertical-align: middle;
+}
+
+#main table.tablehidden2col tr.multilignes th {
+	vertical-align: top;
+	padding-top: 0px;
+}
+#main table.tablehidden2col tr.multilignes td {
+	padding-top: 2px;
+} 
+#main table.tablehidden2col tr.monoligne .txtavecbt {
+	padding: 2px 10px 0 0;
+} 
+#main table.tFromTo th.tbHaut {
+	vertical-align: top;
+}
+#main table.tFromTo img{
+	padding: 0;
+	margin: 3px 5px;
+}
+
+p.btAction,p.btActionW50 {
+	margin: 10px 0;
+	text-align: left;
+}
+
+p.btAction {
+	width: 99%;
+	overflow:hidden; /*  Modif novembre 08*/
+	padding:6px 0 5px 0;
+}
+/* Hack pour FireFox 3 */
+p.btAction, x:-moz-any-link, x:default {padding:6px 0 0 0; }
+
+p.btActionW50 {
+	width: 49%;
+}
+
+div.wins div.contain img,div.wins p.btAction input {
+	margin: 10px 4px;
+}
+
+p.btAction img,p.btActionW50 img, p.btAction input,p.btActionW50 input
+	{
+	width: auto;
+	height: auto;
+	margin: 0 2px 0 0;
+	padding: 0
+}
+
+p.btAction input, p.btActionW50 input,div.wins p.btAction input
+	{
+	border: none;
+}
+
+/* boutons choix multiples */
+#main div.btMulti {
+	position: relative;
+	display: inline;
+	width: auto;
+}
+
+#dropDown {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0px;
+	margin-top: 14px;
+	_margin-top: 17px;
+	width: auto;
+	padding: 5px;
+	z-index: 500;
+	list-style: none;
+	text-align: left;
+	border: 1px solid #9fc120;
+	background: #e9f6bd;
+	font-size: 0.7em;
+}
+
+#dropDown li {
+	line-height: 16px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+#dropDown li a:link,#dropDown li a:visited {
+	color: #189d10;
+	text-decoration: none;
+}
+
+#dropDown n li a:hover {
+	color: #000;
+}
+
+/* jauge*/
+#jauge p {
+	display: inline;
+}
+
+#jauge p.qte {
+	font-weight: bold;
+}
+
+#jauge p.reservoir {
+	height: 10px;
+	line-height: 10px;
+	font-size: 8px;
+	margin: 0 5px;
+	padding: 0 100px 0 0;
+	border: 1px solid #CFCFCF;
+}
+
+/* blocLegende */
+#main div.blocLegende {
+	float: left;
+	width: 100%;
+	margin: 10px 0 50px 0;
+	padding: 5px 0 15px 0;
+	background: #FFF url(../images/bg_blocLegend.gif) repeat-x top;
+	border-bottom: 2px solid #a9ccdf;
+}
+
+#main div.blocLegende p {
+	display: inline;
+	width: auto;
+	margin: 10px 35px 10px 0;
+	padding: 10px 15px;
+	vertical-align: middle;
+	}
+#main div.blocLegende p img {margin: 0 4px -3px 0;}
+#main div.blocLegende h3 {
+	padding: 5px 20px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+/* UPDATE nov 08 */
+/* BOUTONS HTML */
+/* Boutons génériques*/
+span.btVert, span.btVert a, span.btVert input, span.btRouge, span.btRouge a, span.btRouge input, span.btOrange, span.btOrange a, span.btMetier, span.btMetier a, span.btTool, span.btTool a, span.btDesactiv, span.btDesactiv a, span.btDesactiv strong, span.btBlanc, span.btBlanc a, span.btBlanc input {
+	display: inline;
+	height: 18px;
+	line-height: 15px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	text-decoration: none;
+}
+* html span.btVert, * html span.btVert a, * html span.btRouge, * html span.btRouge a, * html span.btOrange a, * html span.btMetier, * html span.btMetier a, * html span.btTool, * html span.btTool a, * html span.btDesactiv, * html span.btDesactiv a, * html span.btDesactiv strong ,* html span.btBlanc, * html span.btBlanc a{ display:inline-block; }
+
+span.btVert input,span.btRouge input,span.btBlanc input {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: medium none;
+	padding-right: 1em;
+	margin: 0;
+}
+
+span.btVert input {
+	background: url("../images/bg_Btvert.gif") no-repeat scroll right top transparent;
+	color: #189D10;
+}
+
+span.btRouge input {
+	background: url("../images/bg_Btrouge.gif") no-repeat scroll right top transparent;
+	color: #FFFFFF;
+}
+
+span.btBlanc input {
+	background: url("../images/bg_Btblanc.gif") no-repeat scroll right top transparent;
+	color: #000000;
+}
+
+span.btVert {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_Btvert.gif) no-repeat top left;
+}
+
+span.btVert a, span.btVert a:link, span.btVert a:visited {
+	display:inline-table;
+	padding: 0px 8px 2px 0;
+	color: #189d10;
+	background: url(../images/bg_Btvert.gif) no-repeat top right;
+	white-space:nowrap;
+}
+
+
+span.btOrange {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_Btor.gif) no-repeat top left;
+}
+
+
+span.btOrange a, span.btOrange a:link, span.btOrange a:visited {
+	display:inline-table;
+	padding: 0px 8px 2px 0;
+	color: #9d7300;
+	background: url(../images/bg_Btor.gif) no-repeat top right;
+	white-space:nowrap;
+}
+
+/* Boutons Annulation */
+span.btRouge {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_Btrouge.gif) no-repeat top left;
+}
+
+span.btRouge a, span.btRouge a:link, span.btRouge a:visited {
+	display:inline-table;
+	padding: 0px 8px 2px 0;
+	color: #FFF;
+	background: url(../images/bg_Btrouge.gif) no-repeat top right;
+	white-space:nowrap;
+}
+
+span.btBlanc {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_Btblanc.gif) no-repeat top left;
+}
+
+span.btBlanc a, span.btBlanc a:link, span.btBlanc a:visited {
+	display:inline-table;
+	padding: 0px 8px 2px 0;
+	color: #000000;
+	background: url(../images/bg_Btblanc.gif) no-repeat top right;
+	white-space:nowrap;
+}
+
+/* Boutons métiers */
+span.btMetier {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_BtbleuCiel.gif) no-repeat top left;
+}
+span.btMetier a:link, span.btMetier a:visited, form table span.btMetier a:link, form table span.btMetier a:visited, #main table.alone td span.btMetier a:link, #main table.alone td span.btMetier a:visited {
+	display:inline-table;
+	padding: 0px 8px 2px 0;
+	color: #FFF;
+	background: url(../images/bg_BtbleuCiel.gif) no-repeat top right;
+	white-space:nowrap;
+}
+form table span.btMetier { margin: 0 5px; }
+
+
+/* Boutons outils */
+span.btTool {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 2px 0 2px 8px;
+	background: url(../images/bg_Btkaki.gif) no-repeat top left;
+}
+form table span.btTool {
+	margin: 0 5px;
+}
+span.btTool a:link, span.btTool a:visited, form table span.btTool a:link, form table span.btTool a:visited, #main table.alone td span.btTool a:link, #main table.alone td span.btTool a:visited {
+	display:inline-table;
+	padding: 2px 8px 2px 0;
+	color: #FFF;
+	background: url(../images/bg_Btkaki.gif) no-repeat top right;
+	white-space:nowrap;
+}
+
+
+/* Boutons desactivés */
+span.btDesactiv {
+	display:inline-table;
+	margin:0pt 5px 0pt 0pt;
+	padding: 0px 0 2px 8px;
+	background: url(../images/bg_Btdesactiv.gif) no-repeat top left;
+}
+
+span.btDesactiv strong, span.btDesactiv a {
+	display:inline-table;
+	padding: 2px 8px 2px 0;
+	color: #b4bdbe;
+	background: url(../images/bg_Btdesactiv.gif) no-repeat top right;
+	white-space:nowrap;
+	cursor: default;
+}
+span.btDesactiv a:hover, form table span.btDesactiv a:hover {
+	cursor: default;
+}
+
+.tableformEAComment span.btVert {background: url(../images/bg_Btvert_ea.gif) no-repeat top left;}
+.tableformEAComment span.btRouge {background: url(../images/bg_Btrouge_ea.gif) no-repeat top left;}
+.tableformEAComment span.btVert a:link, .tableformEAComment span.btVert a:visited { background: url(../images/bg_Btvert_ea.gif) no-repeat top right; }
+.tableformEAComment span.btRouge a:link, .tableformEAComment span.btRouge a:visited { background: url(../images/bg_Btrouge_ea.gif) no-repeat top right; }
+
+.tableformEAoption span.btVert {background: url(../images/bg_Btvert_ea.gif) no-repeat top left;}
+.tableformEAoption span.btRouge {background: url(../images/bg_Btrouge_ea.gif) no-repeat top left;}
+.tableformEAoption span.btVert a:link, .tableformEAoption span.btVert a:visited { background: url(../images/bg_Btvert_ea.gif) no-repeat top right; }
+.tableformEAoption span.btRouge a:link, .tableformEAoption span.btRouge a:visited { background: url(../images/bg_Btrouge_ea.gif) no-repeat top right; }
+
+/* Hack pour FireFox 3 */
+span.btVert, span.btRouge, span.btOrange, span.btBlanc,span.btMetier, span.btTool, span.btDesactiv,span.btBlanc, x:-moz-any-link, x:default {padding: 0 0 2px 8px; } 
+#main form table td .btVert a:hover, #main form table td .btRouge a:hover, #main form table td .btOrange a:hover, #main form table td .btMetier a:hover, #main form table td .btTool a:hover, #main form table td .btDesactiv a:hover, #main form table td .btBlanc a:hover { text-decoration: none;}
+
+/* FIL D'ARIANE */
+.blocFilAriane {
+	height: 32px;
+	margin-bottom: 0px;
+}
+
+.blocFilAriane .lienAide {
+	cursor: pointer;
+	float: right;
+}
+
+.blocFilAriane .texteFilAriane a {
+	text-decoration: underline;
+	color: #000;
+}
+
+ul.ariane2 {
+	width: 50%;
+	list-style: none;
+	margin: 0 auto 20px auto;
+	padding: 10px;
+	background: #FFF url(../images/bg_ariane2.gif) repeat-x top;
+	border: 1px solid #58b1c8;
+	font-size: 11px;
+}
+
+ul.ariane2 ul li {
+	margin: 0 0 0 20px;
+}
+ul.ariane2 ul {
+	display:inline;
+	list-style: none;
+}
+ul.ariane2 a:link, ul.ariane2 a:visited, a.link2:link, a.link2:visited {
+	padding: 0 0 0 10px;
+	background: url(../images/link.gif) no-repeat 0 4px;
+	color: #000;
+	text-decoration: none;
+	line-height: 18px;
+}
+ul.ariane2 a:hover, ul.ariane2 a.actif, a.link2:hover {
+	color: #00448b;
+	font-weight: bold;
+}
+#main table a.link2:link, #main table a.link2:visited { 
+	padding: 0 0 0 10px;
+	background: url(../images/link.gif) no-repeat 0 4px;
+	color: #000;
+	text-decoration: none;
+	line-height: 18px;
+	text-transform:none;
+}
+#main table a.link2:hover {
+	color: #00448b;
+	font-weight: bold;
+}
+
+/* ----------------------------- WINS -------------------------------- */
+div.wins {
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div.fondOpaque {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	padding-right: 10px;
+	top: 0;
+	z-index: 900;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+}
+
+div.fondOpaque2 {
+	position: fixed;
+	!position: absolute;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	padding-right: 10px;
+	top: 0;
+	z-index: 1001;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.8;
+	!filter: alpha(opacity = 80);
+}
+
+div.fondOpaquePopUp {
+	position: fixed;
+	!position: absolute;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	padding-right: 10px;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.8;
+	!filter: alpha(opacity = 80);
+}
+
+div.wins div.contain {
+	z-index: 1000;
+	position:absolute;
+    left: 20%;
+    right: 20%;
+    top: 40%;
+    width: 700px;
+    border: 1px solid #000;
+	
+	/*width: 50%;
+	margin: 5% 25%;*/
+	padding: 10px;
+	background: #FFF;
+	border: 1px solid #01458E;
+	_filter: alpha(opacity = 200);
+}
+div.wins div.contain2 {
+	z-index: 1001;
+	position:absolute;
+    left: 20%;
+    right: 20%;
+    top: 5%;
+    width: 700px;
+    border: 1px solid #000;
+	
+	/*width: 50%;
+	margin: 5% 25%;*/
+	padding: 10px;
+	background: #FFF;
+	border: 1px solid #01458E;
+	_filter: alpha(opacity = 200);
+}
+div.wins div.contain h2 {
+	background:#3A6CA0 none repeat scroll 0%;
+	color:#FFFFFF;
+	display:block;
+	float:none;
+	font-family:Helvetica,Arial,Helvetica,Sans-serif;
+	font-size:0.8em;
+	margin-bottom:20px;
+	padding:8px 0pt 8px 10px;
+}
+div.wins div.contain h2 img {
+	float:right;
+	margin:0pt;
+	padding-right:10px;
+}
+div.wins div.containLarge {
+	width: 70%;
+	margin: 5% 15%;
+}
+
+div.wins div.contain div.titre {
+	padding: 8px 10px;
+	margin-bottom: 20px;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #3A6CA0;
+}
+
+div.wins div.contain2 div.titre {
+	padding: 8px 10px;
+	margin-bottom: 20px;
+	font-family: Helvetica, Arial, Helvetica, Sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #3A6CA0;
+}
+
+div.wins div.contain div.titre img {
+	float: right;
+	margin: 0;
+}
+
+div.wins div.contain2 div.titre img {
+	float: right;
+	margin: 0;
+}
+
+div.wins div.contain form fieldset {
+	border: none;
+	width: 100%;
+	margin: 0;
+}
+
+div.wins div.contain form.narrowPagination fieldset {
+	width: auto;
+	border: 1px solid #a9a9a9;
+	padding: 5px;
+}
+
+div.wins div.contain form {
+	margin: 0;
+}
+
+div.wins div.contain form table.tableform {
+	width: 100%;
+}
+
+div.wins div.contain table img {
+	margin: 0;
+}
+
+#validRecus div.contain {
+	top:30%;
+	left:30%;
+	padding:30px;
+	right:30%;
+	width:auto;
+}
+
+#refuseRecus div.contain {
+	top:30%;
+	left:30%;
+	padding:30px;
+	right:30%;
+	width:40%;
+}
+
+#erreurRecus div.contain {
+	top:15%;
+	left:30%;
+	padding:30px;
+	right:30%;
+	width:auto;
+}
+
+div.contain p.erreur {color:#F00; text-align:center;}
+div.contain em {color: #01458e; font-style:normal; font-weight:bold; font-size:1em;}
+
+#wajoutAction div.contain {
+	top:30%;
+	left:40%;
+	right:30%;
+	width:20%;
+	padding:15px;
+}
+form input{ border: 0; margin:0px 2px 1px 2px; }
+form input[type=checkbox], form input[type=text], form input[type=password] {
+	border:1px solid #7F9DB9;
+}
+form input.onePixBorder {
+	border:1px solid #7F9DB9;
+}
+
+/* ----------------------------- FOOTER -------------------------------- */
+#footer {
+	clear: both;
+	margin: 0 10px 10px 10px;
+	border-top: 3px solid #e3e3e3;
+}
+
+#footer p {
+	color: #3e5462;
+	text-align: center;
+	padding-top: 10px;
+}
+
+/* ----------------------------- EXCEPTIONS -------------------------------- */
+div a.noBorder {
+	border: none;
+}
+
+.noBorder input,.noBorder img {
+	border: none;
+}
+
+div.w50 {
+	float: left;
+	width: 49%;
+}
+.w40Right {
+	float: left;
+	width: 39%;
+	text-align:right;
+}
+
+.w50 {
+	float: left;
+	width: 49%;
+}
+
+.w40 {
+	float: left;
+	width: 39%;
+}
+
+.w35 {
+	float: left;
+	width: 34%;
+}
+
+.w30 {
+	float: left;
+	width: 29%;
+}
+
+.w25 {
+	float: left;
+	width: 24%;
+}
+
+div.septop {
+	border: none;
+	background:url(../images/pointill_double_H.gif)  repeat-x;
+	padding: 14px 0 10px;
+}
+
+p.septop {
+	border: none;
+	background:url(../images/pointill_double_H.gif)  repeat-x;
+	padding: 14px 0 10px;
+}
+
+form table.tbW50 {width:50%; margin: 0 auto;}
+form table.tbW50 caption {margin: 0 auto;}
+
+div p.maj {
+	text-transform: uppercase;
+}
+
+#main p.mini {
+	font-size: 0.7em;
+}
+
+div p.tCenter {
+	text-align: center;
+}
+
+div p.tLeft {
+	text-align: left;
+}
+
+div p.tLeftMarge {
+	text-align: left;
+	padding-top: 5px;
+}
+
+.btisole {
+	margin-top: 2px;
+	margin-bottom: 10px;
+}
+
+.labellike {
+	color: #01458e;
+	/*font-size: 0.9em;*/
+	font-size: 11px;
+	padding-right: 5px;
+}
+
+.infoimp {
+	color: #ba161c;
+	font-weight: bold;
+}
+
+
+.ip40 {
+	width: 40em;
+}
+
+.pHaut {
+	margin-top: 25px;
+	border: 1px solid #FFF;
+}
+
+.pBas {
+	padding-bottom: 25px;
+}
+
+#main p.titre100L {
+	width: 98%;
+	border-bottom: 1px solid #cfcfcf;
+	margin: 20px 0 15px 0;
+}
+
+#main form label.horstable {
+	font-size: 0.7em;
+}
+
+#main table.alone {
+	clear: both;
+	font-size: 0.75em;
+	margin: 0 0 10px 0;
+}
+#main table.alone td {font-size: 11px;}
+
+#main .flRight {
+	float: right;
+	margin:-2px 0pt -3px;
+	padding-bottom:0pt;
+}
+#main .flRightCenter {
+	float: right;
+}
+#main .flLeft {
+	float:left;
+}
+.clear {clear:both;} /* ajout pour remplacer style en ligne */ 
+
+div p.tCenter {
+	width:auto;
+	margin: 0 auto;
+	text-align:center;
+}
+
+/* COLORISATION DES LIENS */
+* .lBleu, a.lBleu:link, a.lBleu:visited, #main table td a.lBleu:link, #main table td a.lBleu:visited {
+	color: #1199cf;
+}	
+
+div .lRouge, a.lRouge:link, a.lRouge:visited, #main table td a.lRouge:link, #main table td a.lRouge:visited {
+	color: #be1414;
+}	
+
+div .lVert, a.lVert:link, a.lVert:visited, #main table td a.lVert:link, #main table td a.lVert:visited {
+	color: #60be14;
+}	
+
+div .lRose, a.lRose:link, a.lRose:visited, #main table td a.lRose:link, #main table td a.lRose:visited {
+	color: #be14a4;
+}
+
+div .lOrange, a.lOrange:link, a.lOrange:visited, #main table td a.lOrange:link, #main table td a.lOrange:visited {
+	color: #FF4500;
+}
+
+div .lNoir, a.lNoir:link, a.lNoir:visited, #main table td a.lNoir:link, #main table td a.lNoir:visited {
+	color: #000;
+}
+
+/* Des textes en noir avec une couleur de fond */
+div .lNoirFondVert, a.lNoirFondVert:link, a.lNoirFondVert:visited, #main table td a.lNoirFondVert:link, #main table td a.lNoirFondVert:visited {
+	color: #fff;
+	background-color:#60be14;
+}
+div .lNoirFondRouge, a.lNoirFondRouge:link, a.lNoirFondRouge:visited, #main table td a.lNoirFondRouge:link, #main table td a.lNoirFondRouge:visited {
+	color: #fff;
+	background-color:#be1414;
+}
+div .lNoirFondOrange, a.lNoirFondOrange:link, a.lNoirFondOrange:visited, #main table td a.lNoirFondOrange:link, #main table td a.lNoirFondOrange:visited {
+	color: #fff;
+	background-color:#FF4500;
+}
+/* Des textes en noir avec une couleur de fond */
+
+/* MENU DEROULANT TYPE ACCORDEON */
+#listDeroul {
+	margin-left: 30px;
+	font-size: 11px;
+}
+#listDeroul img {
+	margin: 0 5px;
+}
+#listDeroul .accordion_toggle, #listDeroul .no_accordion,#listDeroul .no_accordion_select
+	{
+	display: block;
+	height: 14px;
+	padding: 4px 0 4px 12px;
+	font-weight: bold;
+	color: #000;
+	background: #FFF url(../images/picto-moins.gif) no-repeat 0 7px;
+	border : none;
+	cursor: pointer;
+}
+
+#listDeroul .accordion_toggle span.btMetier, #listDeroul .accordion_toggle span.btDesactiv {
+	display: none;
+}
+
+#listDeroul h5 {
+	margin:0;
+	font-size: 11px;
+	text-transform: none;
+}
+
+#listDeroul .accordion_toggle_active span.btMetier, #listDeroul .accordion_toggle_active span.btDesactiv {
+	display: inline;
+	margin-top: -3px;
+}
+/** html #listDeroul .accordion_toggle_active span.btMetier, * html #listDeroul .accordion_toggle_active span.btDesactiv { display:inline-table; }*/
+/* Hack pour FireFox 3 */
+#listDeroul .accordion_toggle_active span.btMetier, #listDeroul .accordion_toggle_active span.btDesactiv, x:-moz-any-link, x:default {display:inline-table; }
+
+#listDeroul .accordion_toggle_active span.btMetier a {
+	color: #774000;
+}
+
+#listDeroul .no_accordion {
+	display: block;
+	padding-left: 12px;
+}
+
+#listDeroul .no_accordion a, #listDeroul .accordion_toggle a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#listDeroul .no_accordion_select {
+	background: #FFF;
+}
+
+#listDeroul .no_accordion_select a {
+	color: #000;
+	font-weight: bold;
+}
+
+#listDeroul .accordion_toggle_active a,#listDeroul .no_accordion_select a:link, #listDeroul .no_accordion_select a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+#listDeroul .accordion_toggle_active {
+	height: 14px;
+	color: #000;
+	background: #FFF url(../images/picto-plus.gif) no-repeat 0 7px;
+	padding-left: 12px;
+}
+
+#listDeroul .accordion_content {
+	clear: both;
+	background: #FFF;
+	margin: 3px 0 3px 13px;
+	overflow: hidden; /* PAS FLUIDE SI PAS PRECISE :-( */
+}
+
+#listDeroul ul {
+	list-style: none;
+}
+
+#listDeroul li {
+	border-bottom: none;
+}
+
+#listDeroul li.select {
+	padding: 3px 0 5px 13px;
+	color: #666;
+	background: #FFF;
+	font-weight: bold;
+}
+
+#listDeroul li a,#listDeroul li a:link,#listDeroul li a:visited {
+	display: block;
+	padding: 3px 0 5px 13px;
+	color: #000;
+	background: #FFF;
+	text-decoration: none;
+}
+
+#listDeroul li a:hover {
+	text-decoration: underline;
+	color: #036;
+}
+
+/* -------------------------------------------------------------------- 
+ 	  AJOUTS par rapport aux feuilles de styles existantes
+-------------------------------------------------------------------- */
+
+#topMain {
+	float:right; 
+	/*width:auto;*/
+	width:350px;
+}	
+#topMain #connect {
+	text-transform:uppercase;
+	color: #01458E;
+	font-size: 75%;
+	font-weight: bold;
+	font-style: italic;
+	margin: 58px 10px 0 0;
+	text-align:right;
+}
+
+p.legendEA {
+	width:100%;
+	text-transform:uppercase;
+	height:15px;
+}
+
+p.legendEtape {
+	width:100%;
+	text-transform:uppercase;
+	height:15px;
+}
+
+p.categorieIndicateur {
+	width:100%;
+	text-transform:uppercase;
+	height:15px;
+}
+
+/* à utiliser en remplacement du span.legend "générique" de la line 780*/
+span.legendEA {
+	float:left;
+	width:99%;
+	font-size: 1.1em;
+	font-weight:bold;
+	color:#737F50;
+	background: url(../images/puceTitre-small.gif) left no-repeat;
+	padding: 0 0 0 13px;
+	border-bottom:1px dotted #000000;
+	margin:0 0 5px;
+}
+
+span.legendEtape {
+	float:left;
+	width:99%;
+	font-size: 1.1em;
+	font-weight:bold;
+	color:#737F50;
+	padding: 0 0 0 13px;
+	border-bottom:1px dotted #000000;
+	margin:0 0 5px;
+}
+
+span.categorieIndicateur {
+	float:left;
+	width:99%;
+	font-size: 1.1em;
+	font-weight:bold;
+	color:#6D7F89;
+	padding: 0 0 0 13px;
+	border-bottom:1px dotted #000000;
+	margin:0 0 5px;
+}
+
+p.sousCategorieIndicateur {
+	width:100%;
+	text-transform:uppercase;
+	height:15px;
+}
+
+span.sousCategorieIndicateur {
+	float:left;
+	width:99%;
+	font-size: 1.1em;
+	font-weight:bold;
+	color:#000000;
+}
+span.categorieSousIndicateur {
+	float:left;
+	width:99%;
+	font-size: 1.1em;
+	font-weight:bold;
+	color:#3B4E53;
+}
+
+span.categorieIndicateur a.indicateur {
+	color:#3A6CA0;
+	text-decoration: none;	
+}
+
+/* ligne de séparation */
+.separ {
+	height: 8px;
+	background: url(../images/bg_separ.gif) repeat-x top left;
+	border: none;
+	margin: 5px 0 10px;
+	clear:both;
+}
+.separ hr {display:none;}
+
+/*  tableau de mise en page 2 col */
+table.tb2col {border: none;}
+table.tb2col td { white-space:nowrap;}
+table.tb2col td.gauche {vertical-align:top; padding: 0 15px 0 0;}
+table.tb2col td.droite {vertical-align:top; padding: 0 0 0 20px;}
+table.tb2col textarea {width: 100%; overflow:auto; font-size: 1.2em; margin:0;}
+table.tb2col td .tableSynthese {width: 95%;}
+	
+
+
+/* ------------------------ */
+/* nouveaux tableaux des EA */
+/* ------------------------ */
+form div.scroll {
+	height: 600px;
+	overflow-y: scroll;
+	margin: 10px 0 15px;
+	padding: 0 10px 5px 0;
+}
+
+/* ligne de séparation des EA */
+.separListesEA {
+	height: 4px;
+	background: url(../images/bg_separListesEA.gif) repeat-x top left;
+	border: 1px solid #000;
+	margin: 0 0 5px 0;
+	clear:both;
+}
+.separListesEA hr {display:none;}
+
+/* tableau prinipal des EA */
+form table.tableformEAmain {
+	width:100%;
+	font-size:0.75em;
+	margin: 0;
+	border:1px solid #D9D9D9;
+}
+form table.tableformEAmain caption {
+	width:100%;
+	color: #FFF;
+	font-weight:bold;
+	text-align:left;
+	background: #244487 url(../images/bg_EAcaption.gif) top left repeat-x;
+	border:1px solid #00236F;
+	padding: 5px 4px;
+	margin: 10px 0 0;
+}
+form table.tableformEAmain caption.captionV2010 {
+	width:100%;
+	color: #FFF;
+	font-weight:bold;
+	text-align:left;
+	background: #a5b9e1 url(../images/bg_EAcaptionV2010.gif) top left repeat-x;
+	border:1px solid #00236F;
+	padding: 5px 4px;
+	margin: 10px 0 0;
+}
+form table.tableformEAmain tr {background-color: #EEE;}
+form table.tableformEAmain th, form table.tableformEAmain td {padding: 3px 5px;}
+form table.tableformEAmain th {
+	/*width: 8.5em;*/
+	text-align: right;
+	text-transform:none;
+	white-space:nowrap;
+}
+
+form table.tableformEAmain td {width: 100%;}
+form table.tableformEAmain .constatEA {padding: 0 5px 12px 7px;}
+form table.tableformEAmain .constatEA textarea {
+	width: 99%; 
+	overflow:auto;
+	font-size: 1.2em;
+}
+
+form table.tableformEAmain .constatEADiff1 {padding: 0 5px 12px 7px;}
+form table.tableformEAmain .constatEADiff1 textarea {
+	width: 99%; 
+	overflow:auto;
+	font-size: 1.2em;
+	color: #66CC66;
+}
+
+form table.tableformEAmain .constatEADiff2 {padding: 0 5px 12px 7px;}
+form table.tableformEAmain .constatEADiff2 textarea {
+	width: 99%; 
+	overflow:auto;
+	font-size: 1.2em;
+	color: #FF9966;
+}
+
+form table.tableformEAmain td.btAction div {width: 95%; padding: 4px 2px 0 20px; white-space:nowrap;}
+
+
+/* tableau optionnel des EA */
+form table.tableformEAoption {
+	width:100%;
+	font-size:0.75em;
+	border:1px solid #D9D9D9;
+}
+form table.tableformEAoption caption {
+	width:100%;
+	text-align:left;
+	font-weight: bold;
+	background-color: #BBB;
+	border-bottom: 1px solid #FFF;
+	padding: 5px 4px;
+}
+
+form table.tableformEAoption caption a {
+	text-decoration: none;
+	color: #000000;
+}
+form table.tableformEAoption tr {background-color: #d7d7d7;}
+form table.tableformEAoption th, form table.tableformEAoption td {padding: 3px 5px;}
+form table.tableformEAoption th {
+	text-align: right;
+	text-transform:none;
+	white-space:nowrap;
+}
+form table.tableformEAoption td {width: 100%;}
+form table.tableformEAoption td.tdComm {padding: 0 5px;}
+form table.tableformEAoption .saisieEA {padding: 0 5px 12px 7px;}
+form table.tableformEAoption .saisieEA textarea {
+	width: 99%;
+	overflow:auto;
+	font-size: 1em;
+}
+
+/* tableau optionnel de synthèse des EA */
+form table.tableformEASynth {
+	width:99%;
+	border:2px solid #FFF;
+	margin: 10px 5px;
+}
+form table.tableformEASynth .col1 {width: auto; text-align: left; border: 1px solid red;}
+form table.tableformEASynth .col2 {width: 15%; text-align: center;}
+form table.tableformEASynth .col3 {width: 80%; text-align: left;} 
+form table.tableformEASynth th {color:#01458E; background-color: #EFEFEF; vertical-align:top;}
+form table.tableformEASynth td {background-color: #FFF; vertical-align:top;}
+
+/* tableau optionnel d'historique des EA */
+form table.tableformEAoption .histoScroll {height: 75px; overflow-y: scroll;}
+
+/* tableau optionnel des commentaires des EA */
+form table.tableformEAComment {
+	width:99%;
+	border:none;
+	padding: 0px 5px;
+}
+form table.tableformEAComment td, form table.tableformEAComment th {vertical-align:top;}
+form table.tableformEAComment td.listComm {width:50%; border-right:1px solid #FFF;}
+form table.tableformEAComment td.listComm .tbScroll {overflow-y: scroll; height: 300px; }
+/* gx 71003 : diminution taille du tableau pour affichage scroller vertical sous IE6 */
+form table.tableformEAComment td.listComm table {width:96%;}
+form table.tableformEAComment td.listComm table td div {text-align: justify;}
+form table.tableformEAComment td.listComm th {color:#01458E;}
+form table.tableformEAComment td.listComm th .date {color:#000; font-weight:normal;}
+form table.tableformEAComment td.addComm {text-align:left; padding: 2px 5px 5px 10px;}
+form table.tableformEAComment td.addComm label {font-weight:bold;} 
+form table.tableformEAoption .addComm textarea {
+	width: 99%;
+	overflow:auto;
+	font-size: 1.2em;
+	margin: 0 0 12px 0;
+}
+
+/* tableau historique des document annexes et presentation es */
+table.tableformHistoDoc {
+	width:98%;
+	border:1px solid #D9D9D9;
+	font-size: 0.75em;
+}
+
+table.tableformHistoDoc caption a {
+	text-decoration: none;
+	color: #000000;
+}
+
+table.tableformHistoDoc caption {
+	width:98%;
+	text-align:left;
+	font-weight: bold;
+	background-color: #BBB;
+	border-bottom: 1px solid #FFF;
+	padding: 5px 4px;
+}
+
+table.tableformHistoDoc tr{
+	background-color: #d7d7d7;
+}
+
+table.tableformHistoDoc tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #BBB;
+}
+
+table.tableformHistoDoc tbody td h3{
+	padding: 2px 5px;
+	color:white;
+	font-size: 1em;
+}
+
+table.tableformHistoDocIn {
+	width:98%;
+	font-size: 0.75em;
+	background-color:white;
+	border: 1px solid #168baa;
+}
+
+table.tableformHistoDocIn caption a {
+	text-decoration: none;
+	color: #000000;
+}
+
+table.tableformHistoDocIn caption {
+	width:98%;
+	text-align:left;
+	font-weight: bold;
+	background-color: #BBB;
+	border-bottom: 1px solid #FFF;
+	padding: 5px 4px;
+}
+
+table.tableformHistoDocIn tr{
+	background-color: #d7d7d7;
+}
+
+table.tableformHistoDocIn tbody td {
+	text-align: left;
+	padding: 2px 5px;
+	text-align: left;
+	border-bottom: 1px solid #BBB;
+}
+
+table.tableformHistoDocIn tbody .lignepaire {
+	background-color: #e8f8fa;
+	font-size: 1.2em;
+}
+
+table.tableformHistoDocIn tbody .ligneimpaire {
+	background-color: #fff;
+	font-size: 1.2em;
+}
+
+table.tableformHistoDocIn thead th {
+	border-bottom: 1px solid #168baa;
+	padding: 2px 6px;
+	font-weight: normal;
+	text-align: left;
+	background-color:white;
+	color: #6e7f89;
+}
+/* FIN tableau historique des document annexes et presentation es */
+
+ul.listeEV {
+	list-style: none;
+	padding-bottom: 4px;
+	_padding-bottom: 5px;
+	margin-bottom: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+ul.listeChapitre {
+	list-style: none;
+	padding-bottom: 4px;
+	_padding-bottom: 5px;
+	margin-bottom: 10px;
+	margin-left:28px;
+}
+
+ul.listeEd {
+	list-style: none;
+	padding-bottom: 4px;
+	_padding-bottom: 5px;
+	margin-bottom: 10px;
+	margin-left:20px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10px;
+}
+
+ul.listeCritere {
+	list-style-type: disc;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	margin-left:40px;
+}
+
+ul.listePreambule {
+	list-style-type: disc;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin-left:40px;
+}
+
+ul.listePEC {
+	list-style-type: square;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	margin-left:52px;
+}
+
+span.expert a {
+	line-height:14px;
+	margin-top:14px;
+	color: #0066CC;
+	font-size: 12px;
+	text-decoration: none;
+	border-bottom: 1px dotted #999;
+}
+
+span.chapitre a {
+	line-height:14px;
+	color: #969696;
+	font-size: 12px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px dotted #999;
+}
+
+form textarea.textareaGrandTotal {
+	font-size: 1.2em;
+	width:100%;
+}
+
+.asterisqueReponseAE{
+	font-size: 30px;
+}
+
+table.tableHorsHAD td >div > input,table.tableHAD td >div > input{
+    text-align: center;
+    width: 45px;
+}
+
+#map-canvas {
+  height: 400px;
+  width: 500px;
+}
+
+
+#cadre-map-geolocalisation {
+  height: 400px;
+  width: 500px;
+  border-left:1px solid #000000;
+  border-right:1px solid #000000;
+  border-bottom:1px solid #000000;
+  border-top:1px solid #000000;
+}
+
+#erreur-geolocalisation {
+	visibility: hidden;
+	font-size: 0.8em;
+	position: absolute;
+	margin-top: -16%;
+	text-align: center;
+	clear: left;
+	padding-right: 5px;
+	color:#F00;
+	line-height: 22px;
+	padding-left: 40px;
+	width: 400px;
+}
+#information-geolocalisation{
+	font-size: 0.8em;
+	position: absolute;
+	margin-top: -16%;
+	text-align: center;
+	clear: left;
+	padding-right: 5px;
+	color: #01458e;
+	line-height: 22px;
+	padding-left: 40px;
+	width: 400px;
+}
+
+span.btBleuV2014 a {
+	height: 32px;
+	width: 219px;
+	display: block;
+	background: url(../images/btValiderV2014.png) no-repeat top left;
+	text-decoration: none;
+}
+
+span.btBleuVideV2014 a {
+	height: 32px;
+	width: 219px;
+	display: block;
+	background: url(../images/boutonVideV2014.png) no-repeat top left;
+	text-decoration: none;
+	line-height: 32px;
+	color: white;
+	font-size: 1.2em;
+}
+
+.inputLoginV2014 {
+	border: none !important;
+	width: 211px;
+	height: 20px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.encartConnexion {
+	height: 323px;
+	margin: auto;
+	margin: 50px 39px 0;
+}
+
+.encartPasEncoreInscrit {
+	height: 323px;
+	margin: auto;
+	margin: 50px 39px 0;
+	background-color: #A0C3D7;
+	display: none;
+}
+
+#pasEncoreInscritButton {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#bandeauV2014 {
+	position: inherit;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+#pictoHomeV2014 {
+	position: absolute;
+	z-index: 2;
+	position: absolute;
+	display: block;
+	float: left;
+	top: 221px;
+	left: 1163px;
+}
+
+#pictoMailV2014 {
+	position: absolute;
+	z-index: 2;
+	position: absolute;
+	display: block;
+	float: left;
+	left: 1206px;
+	top: 227px;
+}
+
+
+.connect #menu ul {  
+  margin-top: 0px;  
+  margin-right: 0px;  
+  margin-bottom: 0px;  
+  margin-left: 0px;  
+  padding-top: 0px;  
+  padding-right: 0px;  
+  padding-bottom: 0px;  
+  padding-left: 0px;  
+  list-style-type: none;  
+  text-align: center;
+}
+
+.connect #menu li {  
+  float: left;  
+  margin-top: auto;  
+  margin-right: auto;  
+  margin-bottom: auto;  
+  margin-left: auto;  
+  padding-top: 0px;  
+  padding-right: 0px;  
+  padding-bottom: 0px;  
+  padding-left: 0px;  
+  background-color: black;
+}
+
+.connect #menu li a {  
+  display: block;  
+  color: white;  
+  padding-top: 0px;  
+  padding-right: 15px;  
+  padding-bottom: 0px;  
+  padding-left: 1.5em;  
+  text-align: left;
+}
+
+.connect #menu ul li ul {  
+  display: none;
+  z-index:100;
+}
+
+#sepRub ul.connect li ul li a:link {  
+  background-color: #e3e3e3;  
+  background-image: url("../images/rub_inactiv.gif");  
+  background-repeat: no-repeat;  
+  background-attachment: scroll;  
+  background-position: 0% 0%;  
+  color: #6d7f89;
+}
+
+/* pour le sous-rubrique active*/
+#sepRub ul.connect li ul li.activ a:link{  
+  background-image: url("../images/rub_activ.gif");  
+  color: #429ecc;
+}
+
+#sepRub ul.connect li ul li.activ a:VISITED{  
+  background-image: url("../images/rub_activ.gif");  
+  color: #429ecc;
+}
+
+#sepRub ul.connect li ul li.activSous a:link{  
+  background-image: url("../images/rub_activ.gif");  
+  color: #6d7f89;
+}
+
+#sepRub ul.connect li ul li.activSous a:VISITED{  
+  background-image: url("../images/rub_activ.gif");  
+  color: #6d7f89;
+}
+
+#sepRub ul.connect li ul li.activSous a:hover{  
+  background-image: url("../images/rub_activ.gif");  
+  color: #429ecc;
+}
+
+#sepRub ul.connect li ul li a:hover {  
+  color: #429ecc;
+}
+
+.connect #menu ul li:hover ul {  
+  display: block;
+}
+
+.connect #menu li:hover ul li {  
+  float: none;
+}
+
+.connect #menu li ul {  
+  position: absolute;
+}
+
+ul.ongletsV2 {
+	list-style: none;
+	border-bottom: 4px solid #003073;
+	padding-bottom: 4px;
+	_padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+
+ul.ongletsV2 li {
+	display: inline;
+	padding: 4px 2px 4px 0;
+	margin-right: 4px;
+	background: url(../images/bg_ongletInact_D.gif) no-repeat right;
+	font-size: 0.7em;
+}
+
+ul.ongletsV2 li span {
+	padding: 3px 3px 3px 6px;
+	background: url(../images/bg_ongletInact_G.gif) no-repeat;
+}
+
+ul.ongletsV2 li.actif {
+	font-weight: bold;
+	background: url(../images/bg_ongletAct_D.gif) no-repeat right;
+}
+
+ul.ongletsV2 li.actif span, ul.ongletsV2 li.tab_displayed span {
+	color: #FFFFFF;
+	background: url(../images/bg_ongletAct_G.gif) no-repeat;
+}
+
+ul.ongletsV2 li.inactif {
+	color: #999;
+}
+
+ul.ongletsV2 a,ul.ongletsV2 a:link,ul.ongletsV2 a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+ul.ongletsV2 a:hover {
+	text-decoration: underline;
+}
+
+img.ajoutDemandeHAS {
+	cursor: pointer; 
+	cursor: hand;
+}
+
+img.ajoutDemandeHASDesactivee{
+	opacity: 0.4;
+	cursor: initial;
+}
+
+table.oddevenstyle tbody tr:nth-child(odd) {
+	background-color: #EFF0F2;
+}
+

@@ -1,0 +1,35 @@
+.memo_show_hide {
+	background-color: rgb(227,227,227);
+	border: solid 1px rgb(109, 127, 137);
+	padding: 5px 10px 5px 5px;
+	z-index: 100;
+}
+
+.memo_text {
+	height: 160px;
+	width: 100%;
+	resize: none;
+	background-color: rgb(239,239,239);
+	font: 101% Arial,Helvetica,Sans-serif;
+	font-size: 11px;
+}
+
+.memo_bold {
+	font-weight: bold;
+}
+
+.memo_last_modif_container
+{
+	height: 20px;
+	font-size: 11px;
+	text-align: center;
+	color: black;
+}
+
+.memo_save
+{
+	display: block;
+	margin-top : 3px;
+    margin-left: auto;
+    margin-right: auto;
+}

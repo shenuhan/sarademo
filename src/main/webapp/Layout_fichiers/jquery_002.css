@@ -1,0 +1,35 @@
+.message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	position: fixed;
+	bottom: 38px;
+	left: 10px;
+	display: none;
+	z-index: 1000;
+	width: 120px;
+	padding-left: 20px;
+	margin-top: 3px;
+}
+
+.message_notification {
+	background: url("../images/confirm.gif") no-repeat scroll 0 0 #DEFFBF;
+	border-top: medium solid #6AB536;
+	border-bottom: thin solid #6AB536;
+	color: #6AB536;
+}
+
+.message_warning {
+	background: url("../images/attention.gif") no-repeat scroll 0 0 #FFF6BF;
+	border-top: medium solid #FFDD57;
+	border-bottom: thin solid #FFDD57;
+	color: #CF6F10;
+}
+
+.message_error {
+	background: url("../images/cross.gif") no-repeat scroll 2px 2px #FFD8BF;
+	background-size: 12px 12px;
+	border-top: medium solid #FF693F;
+	border-bottom: thin solid #FF693F;
+	color: #FF693F;
+	border-top: medium solid #FF693F;
+}
