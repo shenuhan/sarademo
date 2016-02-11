@@ -2,18 +2,20 @@
 			 xmlns:p="tapestry:parameter">
 	<t:dialog t:id="documentContextDialog" t:title="Historique des documents contextuels">
 		<p:content>
-			<div class="table">
-				<div class="row call-form">
-					<!-- t:documentdatatable t:datatableId="historyTable"/-->
-					<t:beaneditform object="documentContext"/>
-					<!-- 
-					<t:errors/>
-					<t:textfield t:id="call.callee" validate="required"/>
-					<t:textfield t:id="call.phoneNumber" validate="regexp"/>
-					<t:datefield t:id="call.date" validate="required"/>
-					-->
+			<t:zone t:id="formZone">
+				<div class="table">
+					<div class="row call-form">
+						<!-- t:documentdatatable t:datatableId="historyTable"/-->
+						<t:beaneditform t:id="ajaxForm" object="documentContext" t:zone="^"/>
+						<!-- 
+						<t:errors/>
+						<t:textfield t:id="call.callee" validate="required"/>
+						<t:textfield t:id="call.phoneNumber" validate="regexp"/>
+						<t:datefield t:id="call.date" validate="required"/>
+						-->
+					</div>
 				</div>
-			</div>
+			</t:zone>
 		</p:content>
 	</t:dialog>
 </t:container>

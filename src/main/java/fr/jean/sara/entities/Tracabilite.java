@@ -9,19 +9,21 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.tapestry5.beaneditor.Validate;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Tracabilite extends BasicEntity {
-	@NotNull
+	@Validate("required")
 	@Length(max=255)
 	@Size(max=255)
 	private String source;
-	@NotNull
+	@Validate("required")
 	private Date date;
 	@NotNull
 	@Length(max=255)
 	@Size(max=255)
+	@Validate("required")
 	private String titre;
 	private boolean impact;
 	private String contenu;

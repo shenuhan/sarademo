@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Feb 11 20:15:26 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0152-d1c2-6e3d-0000119d4f90 
+Thu Feb 11 20:42:31 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0152-d1db-38e7-00000abbd578 
 on database directory /home/elojean/jean/sarademo\database  with class loader ContextLoader@demo Tapestry 5 Application 
 Loaded from file:/home/elojean/.m2/repository/org/apache/derby/derby/10.7.1.1/derby-10.7.1.1.jar
 java.vendor=Oracle Corporation
