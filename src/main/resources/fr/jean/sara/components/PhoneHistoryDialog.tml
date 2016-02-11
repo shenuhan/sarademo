@@ -4,7 +4,7 @@
 		<p:content>
 			<div class="table">
 				<div class="row call-form">
-					<t:documentdatatable t:datatableId="historyTable"/>
+					<!-- t:documentdatatable t:datatableId="historyTable"/-->
 					<t:beaneditform object="call"/>
 					<!-- 
 					<t:errors/>

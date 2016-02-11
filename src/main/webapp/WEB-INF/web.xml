@@ -31,13 +31,17 @@
             fr.jean.sara.services.QaModule
         </param-value>
     </context-param>
-
+    <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/service-context.xml</param-value>
+	</context-param>
 
     <!-- Filter configuration -->
-    <filter>
-        <filter-name>app</filter-name>
-        <filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
-    </filter>
+	<filter>
+		<filter-name>app</filter-name>
+		<!-- Special filter that adds in a T5 IoC module derived from the Spring WebApplicationContext. -->
+		<filter-class>org.apache.tapestry5.spring.TapestrySpringFilter</filter-class>
+	</filter>
 
     <filter-mapping>
         <filter-name>app</filter-name>
