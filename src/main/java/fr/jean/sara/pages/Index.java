@@ -96,7 +96,7 @@ public class Index
 		
 		List<CompteQualite> compteQualites = new ArrayList<CompteQualite>() {{
 			add(new CompteQualite() {{
-				setIdentifiant("Compte qualité (1)");
+				setIdentifiant("Compte qualitï¿½ (1)");
 				setRapports(new ArrayList<Rapport>() {{
 					add(new Rapport() {{
 						setIdentifiant("RP(1.1)");
@@ -105,7 +105,7 @@ public class Index
 				}});
 			}});
 			add(new CompteQualite() {{
-				setIdentifiant("Compte qualité (2)");
+				setIdentifiant("Compte qualitï¿½ (2)");
 			}});
 		}};
 		

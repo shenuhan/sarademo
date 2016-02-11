@@ -51,11 +51,6 @@
 			<version>10.7.1.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.got5</groupId>
-			<artifactId>tapestry5-jquery</artifactId>
-			<version>4.0.0</version>
-		</dependency>
 		<!-- Uncomment this to add support for file uploads: -->
 		<!-- <dependency> <groupId>org.apache.tapestry</groupId> <artifactId>tapestry-upload</artifactId> 
 			<version>${tapestry-release-version}</version> </dependency> -->

@@ -1,11 +1,11 @@
 <t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 			 xmlns:p="tapestry:parameter">
-	<t:dialog t:id="phoneHistoryDialog" t:title="Historique des appels">
+	<t:dialog t:id="documentContextDialog" t:title="Historique des documents contextuels">
 		<p:content>
 			<div class="table">
 				<div class="row call-form">
 					<!-- t:documentdatatable t:datatableId="historyTable"/-->
-					<t:beaneditform object="call"/>
+					<t:beaneditform object="documentContext"/>
 					<!-- 
 					<t:errors/>
 					<t:textfield t:id="call.callee" validate="required"/>

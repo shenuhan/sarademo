@@ -1,10 +1,10 @@
-<html t:type="layout2" title="Sara demo"
+<html t:type="layout" title="Sara demo"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
 	xmlns:p="tapestry:parameter"> 
 	<t:eventlink event="ajax" zone="modalzone" class="demo-button"><i style="font-size: 4em;" class="fa fa-phone-square"></i></t:eventlink>	
 	<t:zone t:id="modalzone" class="span4">
 	</t:zone> 
 	<t:block t:id="modalblock">
-		<t:phoneHistoryDialog></t:phoneHistoryDialog>
+		<t:documentContextDialog></t:documentContextDialog>
 	</t:block> 
 </html>

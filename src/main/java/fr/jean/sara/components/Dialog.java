@@ -10,7 +10,7 @@ import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 
-@Import(module={"bootstrap/modal","jquery"})
+@Import(module={"jquery"})
 public class Dialog {
 	@Parameter(value = "prop:componentResources.id", defaultPrefix = BindingConstants.LITERAL)
 	private String dialogId;
