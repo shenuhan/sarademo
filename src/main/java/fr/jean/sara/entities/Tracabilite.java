@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.tapestry5.beaneditor.NonVisual;
 import org.apache.tapestry5.beaneditor.Validate;
 import org.hibernate.validator.constraints.Length;
 
@@ -26,12 +28,18 @@ public class Tracabilite extends BasicEntity {
 	@Validate("required")
 	private String titre;
 	private boolean impact;
+	@Length(max=4095)
+	@Size(max=4095)
 	private String contenu;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	@Size(min=1)
 	private List<Categories> categories;
-
+	
+	@ManyToOne
+	@NonVisual
+	private Demarche demarche;
+	
 	public String getSource() {
 		return source;
 	}
@@ -78,6 +86,14 @@ public class Tracabilite extends BasicEntity {
 
 	public void setCategories(List<Categories> categories) {
 		this.categories = categories;
+	}
+
+	public Demarche getDemarche() {
+		return demarche;
+	}
+
+	public void setDemarche(Demarche demarche) {
+		this.demarche = demarche;
 	}
 
 }

@@ -1,5 +1,7 @@
 package fr.jean.sara.services;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,10 @@ public class DemarcheService {
 			demarche = (Demarche) session.merge(demarche);
 		}
 		return demarche;
+	}
+
+	public void getAll(Session session) {
+		List l = session.createQuery("from Demarche").list();
+		l.isEmpty();
 	}
 }

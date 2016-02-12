@@ -5,6 +5,6 @@
 	<t:zone t:id="modalzone" class="span4">
 	</t:zone> 
 	<t:block t:id="modalblock">
-		<t:documentContextDialog></t:documentContextDialog>
+		<t:documentContextDialog t:demarcheId="4"></t:documentContextDialog>
 	</t:block> 
 </html>

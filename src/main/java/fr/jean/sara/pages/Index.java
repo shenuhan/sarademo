@@ -12,6 +12,7 @@ import org.apache.tapestry5.annotations.Import;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Log;
 import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.HttpError;
 import org.apache.tapestry5.services.Request;
@@ -66,8 +67,8 @@ public class Index
     logger.info("Complete call on Index page");
   }
 
-  @SuppressWarnings("serial")
   @Log
+  @CommitAfter
   Object onAjax()
   {
     logger.info("Ajax call on Index page");
