@@ -2,8 +2,6 @@ package fr.jean.sara.components;
 
 import java.util.List;
 
-import org.apache.tapestry5.BindingConstants;
-import org.apache.tapestry5.annotations.BeforeRenderBody;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
@@ -14,7 +12,9 @@ import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.Request;
 import org.hibernate.Session;
+import org.slf4j.Logger;
 
+import fr.jean.sara.entities.Demarche;
 import fr.jean.sara.entities.Tracabilite;
 import fr.jean.sara.services.DemarcheService;
 
@@ -23,10 +23,16 @@ public class DocumentContextDialog {
 	private Tracabilite documentContext;
 
 	@Property
-	private List<Tracabilite> documentContexts;
+	private Demarche demarche;
 
-	@Parameter(required = true, value = "prop:componentResources.demarcheId", defaultPrefix = BindingConstants.LITERAL)
-	private int demarcheId;
+	@Property
+	private List<Tracabilite> documentContexts;
+    
+	@Inject
+    private Logger logger;
+	
+	@Parameter(required=true)
+	private int demarcheid;
 
 	@Inject
 	private Request request;
@@ -45,7 +51,9 @@ public class DocumentContextDialog {
     
 	@SetupRender
     void loadDocumentContext() {
-		service.getAll(session);
+		demarche = service.get(demarcheid, session);
+		documentContexts = service.getDocumentContexts(demarcheid, session);
+		logger.info("d: " + demarcheid);
     }
     
 	@CommitAfter
