@@ -1,0 +1,29 @@
+<t:container  xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<t:zone t:id="catZone">
+		<t:form t:id="catForm" zone="catZone">
+			<div t:type="loop" t:id="categories" source="propertyCategories"
+				index="index" value="category" class="form-group">
+				<div class="input-group">
+					<t:textfield t:id="category" value="category.label" />
+					<span class="input-group-btn">
+						<t:if test="isFirst">
+							<button class="btn btn-default">
+								<t:actionlink t:id="add" event="addCategory" zone="catZone">
+									<i class="fa fa-plus"></i>
+								</t:actionlink>
+							</button>
+						</t:if>
+			
+						<t:if test="isNotFirst">
+							<button class="btn btn-default">
+								<t:actionlink t:id="remove" event="removeCategory" zone="catZone" t:context="index">
+									<i class="fa fa-times"></i>
+								</t:actionlink>
+							</button>
+						</t:if>
+					</span>
+				</div>
+			</div>
+		</t:form>
+	</t:zone>
+</t:container>

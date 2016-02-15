@@ -32,9 +32,9 @@ public class Tracabilite extends BasicEntity {
 	@Size(max=4095)
 	private String contenu;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="tracabilite", orphanRemoval=true)
 	@Size(min=1)
-	private List<Categories> categories;
+	private List<Category> categories;
 	
 	@ManyToOne
 	@NonVisual
@@ -80,11 +80,11 @@ public class Tracabilite extends BasicEntity {
 		this.contenu = contenu;
 	}
 
-	public List<Categories> getCategories() {
+	public List<Category> getCategories() {
 		return categories;
 	}
 
-	public void setCategories(List<Categories> categories) {
+	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
 
