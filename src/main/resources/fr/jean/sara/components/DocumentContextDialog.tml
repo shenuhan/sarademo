@@ -3,6 +3,40 @@
 	<t:dialog t:id="documentContextDialog" t:title="Historique des documents contextuels">
 		<p:content>
 			<t:zone t:id="formZone">
+				<div class="input-group">
+					<input type="text" id="search"/>
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="search-results">
+					<t:loop source="documentContexts" value="current">
+			            <div class="search-result">
+			            	<div style="display:table">
+			            		<div style="display:table-cell">
+					            	<div class="t-title">
+					            		${current.titre}
+					            	</div>
+					            	<div class="t-date">
+					            		${current.date}
+					            	</div>
+				            	</div>
+				            	<div style="display:table-cell">
+					            	<div class="t-date">
+					            		${current.source}
+									</div>
+					            	<div class="t-categories">
+					            		<t:loop source="current.categories" value="category">
+			        						<span>${category}</span>
+			        					</t:loop>
+									</div>					            			
+			            		</div>
+			            	</div>
+							<div clas="t-content">
+								${current.contenu}
+							</div>
+							
+			            </div>
+			        </t:loop>
+			    </div>
 				<div class="table">
 					<div class="row call-form">
 						<!-- t:documentdatatable t:datatableId="historyTable"/-->

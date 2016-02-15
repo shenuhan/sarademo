@@ -23,6 +23,12 @@ public class DocumentContextDialog {
 	private Tracabilite documentContext;
 
 	@Property
+	private Tracabilite current;
+	
+	@Property
+	private String category;
+
+	@Property
 	private Demarche demarche;
 
 	@Property
