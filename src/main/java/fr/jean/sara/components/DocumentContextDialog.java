@@ -128,7 +128,7 @@ public class DocumentContextDialog {
 			
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/search").invoke("activate");					
+				javascriptSupport.require("filter/contextModal").invoke("search");					
 			}
 		});
 	}
@@ -139,7 +139,7 @@ public class DocumentContextDialog {
 	
 	@AfterRender
 	private void afterRender() {
-		js.require("filter/search").invoke("activate");
+		js.require("filter/contextModal").invoke("search");
 	}
 
 	Object onFailure() {
@@ -160,19 +160,32 @@ public class DocumentContextDialog {
 		categories.set(categories.indexOf(category), null);
 	}
 
-	public Object onEditTracabilite(int id) {
+	public void onEditTracabilite(final int id) {
 		isNew = false;
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		categories = new ArrayList<Category>(documentContext.getCategories());
-		return formzone.getBody();
+		ajaxResponseRenderer.addRender(formzone).addCallback(new JavaScriptCallback() {
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/contextModal").invoke("activateResult").with(id);				
+				javascriptSupport.require("filter/contextModal").invoke("formVisible").with(true);				
+			}
+		});
 	}
-
-	public Object onNewTracabilite() {
+	
+	public void onNewTracabilite() {
 		isNew = true;
 		categories = new ArrayList<Category>();
 		documentContext = new Tracabilite();
 		documentContext.setDate(new Date());
-		return formzone.getBody();
+		ajaxResponseRenderer.addRender(formzone).addCallback(new JavaScriptCallback() {
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/contextModal")
+					.invoke("activateResult")	
+					.invoke("formVisible").with(true);
+			}
+		});
 	}
 	
 	@Inject
@@ -186,7 +199,10 @@ public class DocumentContextDialog {
 		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/search").invoke("activate");					
+				javascriptSupport.require("filter/contextModal")
+					.invoke("search")
+					.invoke("activateResult")
+					.invoke("formVisible").with(false);
 			}
 		});
 	}
@@ -197,7 +213,10 @@ public class DocumentContextDialog {
 			
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/search").invoke("activate");					
+				javascriptSupport.require("filter/contextModal")
+					.invoke("search")
+					.invoke("activateResult")
+					.invoke("formVisible").with(false);
 			}
 		});
 	}
@@ -244,11 +263,13 @@ public class DocumentContextDialog {
 	private ValueEncoder<Category> categoryEncoder = new ValueEncoder<Category>() {
 		@Override
 		public String toClient(Category value) {
+			logger.info("toclient " + categories.indexOf(value) + " " + categories.size());
 			return String.valueOf(categories.indexOf(value));
 		}
 
 		@Override
 		public Category toValue(String clientValue) {
+			logger.info("toValue " + clientValue + " " + categories.size());
 			return categories.get(Integer.parseInt(clientValue));
 		}
 	};

@@ -19,3 +19,66 @@ h1, h2 {
 	font-style: italic;
 	background: yellow;
 }
+
+.search-results,
+#formzone
+ {
+	display: inline-block;
+}
+
+.search-results.form-visible {
+	max-width: 500px;
+}
+
+#formzone {
+	padding: 0 15px;
+	vertical-align: top;
+}
+
+.search-results>a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.search-result {
+	padding: 15px;	
+}
+
+.search-result:hover {
+	background-color: #aadeee;
+	color:black;
+}
+
+.search-result.active {
+	background-color:#1d7995;
+	color:white;
+}
+
+.search-result>div {
+	display:table;
+	width:100%;
+}
+
+.search-result>div>div {
+	display:cell;
+	float:left;
+}
+
+.search-result .right {
+	text-align: right;
+	float:right;
+}
+
+.search-result .t-title {
+	font-size: 2em;
+}
+
+.search-result .t-source,
+.search-result .t-date,
+.search-result .t-categories {
+	font-size: 1.5em;
+}
+
+.search-result .t-content {
+	text-align: justify;
+}

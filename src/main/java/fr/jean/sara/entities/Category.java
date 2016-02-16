@@ -25,11 +25,4 @@ public class Category extends BasicEntity {
 	public void setTracabilite(Tracabilite tracabilite) {
 		this.tracabilite = tracabilite;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (!(obj instanceof Category)) return false;
-		Category c = (Category) obj;
-		return (c.getId() != 0 && c.getId() == getId()) || (c.getLabel() == getLabel());
-	}
 }

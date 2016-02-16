@@ -3,84 +3,95 @@
 	<t:dialog t:id="documentContextDialog" t:title="Historique des documents contextuels">
 		<p:content>
 			<t:zone t:id="contextzonemodal" id="contextzonemodal" visible="false">
-				<div class="input-group">
-					<input type="text" id="search" />
-					<i class="fa fa-search"></i>
+				<div class="actions">
+					<div class="input-group">
+						<input class="form-control" type="text" id="search" />
+						<span class="input-group-btn">
+							<button class="btn">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+					<div>
+						<button event="newTracabilite" t:id="newTracabilite" zone="formzone" t:type="eventlink" class="btn btn-info">Ajouter <span class="fa fa-plus"></span></button>
+					</div>
 				</div>
-				<div>
-					<button event="newTracabilite" t:id="newTracabilite" zone="formzone" t:type="eventlink" class="btn">Ajouter</button>
-				</div>
-				<div class="search-results">
-					<t:loop source="documentContexts" value="current">
-						<t:eventlink event="editTracabilite" t:id="editTracabilite" zone="formzone" context="current.id" href="#">
-							<div class="search-result">
-								<div style="display:table">
-									<div style="display:table-cell">
-										<div class="t-title">
-											${current.titre}
+				<div class="context-body">
+					<div class="search-results">
+						<t:loop source="documentContexts" value="current">
+							<div t:type="eventlink" event="editTracabilite" t:id="editTracabilite" zone="formzone" context="current.id" href="#">
+								<div class="search-result" id="search-result-${current.id}">
+									<div>
+										<div>
+											<div class="t-title">
+												${current.titre}
+											</div>
+											<div class="t-date">
+												<t:output format="format" value="current.date" />
+											</div>
 										</div>
-										<div class="t-date">
-											<t:output format="format" value="current.date" />
+										<div class="right">
+											<div class="t-source">
+												Source: ${current.source}
+											</div>
+											<div class="t-categories">
+												<t:loop source="current.categories" value="category">
+													<span>${category.label}&nbsp;</span>
+												</t:loop>
+											</div>
 										</div>
 									</div>
-									<div style="display:table-cell">
-										<div class="t-date">
-											${current.source}
-										</div>
-										<div class="t-categories">
-											<t:loop source="current.categories" value="category">
-												<span>${category.label}</span>
-											</t:loop>
-										</div>
+									<div clas="t-content">
+										${current.contenu}
 									</div>
-								</div>
-								<div clas="t-content">
-									${current.contenu}
 								</div>
 							</div>
-						</t:eventlink>
-					</t:loop>
+						</t:loop>
+					</div>
+					<t:zone t:id="formzone" id="formzone" visible="false">
+						<t:if test="showForm">
+							<t:form t:id="ajaxForm" role="form" t:zone="contextzonemodal">
+								<t:errors />
+		
+								<t:beaneditor object="documentContext">
+									<p:id>
+										<div style="display:none;">
+											<t:textfield t:id="id" value="documentContext.id" />
+										</div>
+									</p:id>
+									<p:contenu>
+										<t:label for="contenu" />
+										<t:textarea t:id="contenu" value="documentContext.contenu" />
+									</p:contenu>
+								</t:beaneditor>
+							
+								<label>Catégories</label>
+								<t:ajaxformloop t:id="categories" source="categories" value="category" encoder="categoryEncoder">
+									<div class="form-group">
+										<div class="input-group">
+											<t:textfield t:id="label" value="category.label" t:mixins="autocomplete" minChars="0"/>
+											<span class="input-group-btn"><button t:type="removerowlink" class="btn btn-default"><span class="fa fa-times"></span></button></span>
+										</div>
+									</div>
+									<p:addRow>
+		                                <button class="btn btn-success" t:type="addrowlink">Ajouter une catégorie</button>
+			                        </p:addRow>
+								</t:ajaxformloop>
+								<p>
+									<t:if test="isNew">
+										<input class="btn btn-success" type="submit" value="Ajouter" />
+										<button event="annulerTracabilite" t:id="annulerTracabilite" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
+									</t:if>
+									<t:if test="isNotNew">
+										<input class="btn btn-success" type="submit" value="Mettre à jour" />
+										<button event="annulerTracabilite" t:id="annulerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
+										<button event="supprimerTracabilite" t:id="supprimerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" context="documentContext.id"  class="btn btn-danger">Supprimer</button>
+									</t:if>
+								</p>
+							</t:form>
+						</t:if>
+					</t:zone>
 				</div>
-				<t:zone t:id="formzone" id="formzone" visible="false">
-					<t:if test="showForm">
-						<t:form t:id="ajaxForm" role="form" t:zone="contextzonemodal">
-							<t:errors />
-	
-							<t:beaneditor object="documentContext">
-								<p:id>
-									<div style="display:none;">
-										<t:textfield t:id="id" value="documentContext.id" />
-									</div>
-								</p:id>
-								<p:contenu>
-									<t:label for="contenu" />
-									<t:textarea t:id="contenu" value="documentContext.contenu" />
-								</p:contenu>
-							</t:beaneditor>
-						
-							<label>Catégories</label>
-							<t:ajaxformloop t:id="categories" source="categories" value="category" encoder="categoryEncoder">
-								<div class="form-group">
-									<div class="input-group">
-										<t:textfield t:id="label" value="category.label" t:mixins="autocomplete" minChars="0"/>
-										<span class="input-group-btn"><button t:type="removerowlink" class="btn btn-default"><span class="fa fa-times"></span></button></span>
-									</div>
-								</div>
-							</t:ajaxformloop>
-							<p>
-								<t:if test="isNew">
-									<input class="btn btn-success" type="submit" value="Ajouter" />
-									<button event="annulerTracabilite" t:id="annulerTracabilite" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
-								</t:if>
-								<t:if test="isNotNew">
-									<input class="btn btn-success" type="submit" value="Mettre à jour" />
-									<button event="annulerTracabilite" t:id="annulerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
-									<button event="supprimerTracabilite" t:id="supprimerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" context="documentContext.id"  class="btn btn-danger">Supprimer</button>
-								</t:if>
-							</p>
-						</t:form>
-					</t:if>
-				</t:zone>
 			</t:zone>
 		</p:content>
 	</t:dialog>
