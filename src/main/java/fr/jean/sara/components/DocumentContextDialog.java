@@ -19,6 +19,8 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
+import org.apache.tapestry5.services.ajax.JavaScriptCallback;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.hibernate.Session;
 import org.slf4j.Logger;
@@ -102,7 +104,7 @@ public class DocumentContextDialog {
 	}
 
 	@CommitAfter
-	Object onSuccess() {
+	void onSuccess() {
 		logger.info("Demarche id "
 				+ (demarche == null ? null : demarche.getId()));
 		demarche = service.get(demarche.getId(), session);
@@ -122,7 +124,13 @@ public class DocumentContextDialog {
 			session.update(documentContext);
 		}
 		loadDocumentContext();
-		return contextzonemodal.getBody();
+		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
+			
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/search").invoke("activate");					
+			}
+		});
 	}
 	
 
@@ -166,19 +174,32 @@ public class DocumentContextDialog {
 		documentContext.setDate(new Date());
 		return formzone.getBody();
 	}
+	
+	@Inject
+	private AjaxResponseRenderer ajaxResponseRenderer;
 
 	@CommitAfter
-	public Object onSupprimerTracabilite(int id) {
+	public void onSupprimerTracabilite(int id) {
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		session.delete(documentContext);
 		loadDocumentContext();
-		return contextzonemodal.getBody();
+		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/search").invoke("activate");					
+			}
+		});
 	}
 	
-	public Object onAnnulerTracabilite() {
-		
+	public void onAnnulerTracabilite() {
 		loadDocumentContext();
-		return contextzonemodal.getBody();
+		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
+			
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/search").invoke("activate");					
+			}
+		});
 	}
 	
 	public boolean getIsNotNew() {
