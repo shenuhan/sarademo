@@ -9,6 +9,7 @@ import org.apache.commons.collections.Transformer;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Mixins;
@@ -22,6 +23,7 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.javascript.JavaScriptSupport;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 
@@ -126,6 +128,15 @@ public class DocumentContextDialog {
 		loadDocumentContext();
 		return contextzonemodal.getBody();
 	}
+	
+
+	@Inject
+	private JavaScriptSupport js;
+	
+	@AfterRender
+	private void afterRender() {
+		js.require("filter/search").invoke("activate");
+	}
 
 	Object onFailure() {
 		return request.isXHR() ? formzone.getBody() : null;
@@ -178,8 +189,8 @@ public class DocumentContextDialog {
 		return !isNew;
 	}
 	
-	private static final String PERIMETRE = "Tous périmètres";  
-	private static final String COMPTEQUATLITE = "Tous comptes qualités";  
+	private static final String PERIMETRE = "Tous perimetres";  
+	private static final String COMPTEQUATLITE = "Tous comptes qualites";  
 	private static final String VISITE = "Toutes visites";  
 
 	String[] onProvideCompletionsFromLabel(String input) {

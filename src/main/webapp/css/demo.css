@@ -13,3 +13,9 @@ h1, h2 {
 	padding: 0;
 	margin: 0;
 }  /* 0 for all objects */
+
+.highlight {
+	font-weight: bold;
+	font-style: italic;
+	background: yellow;
+}
