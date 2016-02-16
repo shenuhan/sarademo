@@ -2,71 +2,73 @@
 	xmlns:p="tapestry:parameter">
 	<t:dialog t:id="documentContextDialog" t:title="Historique des documents contextuels">
 		<p:content>
-			<div class="input-group">
-				<input type="text" id="search" />
-				<i class="fa fa-search"></i>
-			</div>
-			<div>
-				<button event="newTracabilite" t:id="newTracabilite" zone="formzone" t:type="eventlink" class="btn">Ajouter</button>
-			</div>
-			<div class="search-results">
-				<t:loop source="documentContexts" value="current">
-					<t:eventlink event="editTracabilite" t:id="editTracabilite" zone="formzone" context="current.id" href="#">
-						<div class="search-result">
-							<div style="display:table">
-								<div style="display:table-cell">
-									<div class="t-title">
-										${current.titre}
+			<t:zone t:id="contextzonemodal" id="contextzonemodal" visible="false">
+				<div class="input-group">
+					<input type="text" id="search" />
+					<i class="fa fa-search"></i>
+				</div>
+				<div>
+					<button event="newTracabilite" t:id="newTracabilite" zone="formzone" t:type="eventlink" class="btn">Ajouter</button>
+				</div>
+				<div class="search-results">
+					<t:loop source="documentContexts" value="current">
+						<t:eventlink event="editTracabilite" t:id="editTracabilite" zone="formzone" context="current.id" href="#">
+							<div class="search-result">
+								<div style="display:table">
+									<div style="display:table-cell">
+										<div class="t-title">
+											${current.titre}
+										</div>
+										<div class="t-date">
+											<t:output format="format" value="current.date" />
+										</div>
 									</div>
-									<div class="t-date">
-										<t:output format="format" value="current.date" />
+									<div style="display:table-cell">
+										<div class="t-date">
+											${current.source}
+										</div>
+										<div class="t-categories">
+											<t:loop source="current.categories" value="category">
+												<span>${category.label}</span>
+											</t:loop>
+										</div>
 									</div>
 								</div>
-								<div style="display:table-cell">
-									<div class="t-date">
-										${current.source}
-									</div>
-									<div class="t-categories">
-										<t:loop source="current.categories" value="category">
-											<span>${category.label}</span>
-										</t:loop>
-									</div>
+								<div clas="t-content">
+									${current.contenu}
 								</div>
 							</div>
-							<div clas="t-content">
-								${current.contenu}
-							</div>
-						</div>
-					</t:eventlink>
-				</t:loop>
-			</div>
-			<t:zone t:id="formzone" id="formzone" visible="false">
-				<t:if test="showForm">
-					<t:form t:id="ajaxForm" role="form">
-						<t:errors />
-
-						<t:beaneditor object="documentContext">
-							<p:contenu>
-								<t:label for="contenu" />
-								<t:textarea t:id="contenu" value="documentContext.contenu" />
-							</p:contenu>
-						</t:beaneditor>
-					
-						<label>Catégories</label>
-						<t:ajaxformloop t:id="categories" source="categories" value="category" encoder="categoryEncoder">
-							<div class="form-group">
-								<div class="input-group">
-									<t:textfield t:id="label" value="category.label" />
-									<span class="input-group-btn"><button t:type="removerowlink" class="btn btn-default"><span class="fa fa-times"></span></button></span>
+						</t:eventlink>
+					</t:loop>
+				</div>
+				<t:zone t:id="formzone" id="formzone" visible="false">
+					<t:if test="showForm">
+						<t:form t:id="ajaxForm" role="form" t:zone="contextzonemodal">
+							<t:errors />
+	
+							<t:beaneditor object="documentContext">
+								<p:contenu>
+									<t:label for="contenu" />
+									<t:textarea t:id="contenu" value="documentContext.contenu" />
+								</p:contenu>
+							</t:beaneditor>
+						
+							<label>Catégories</label>
+							<t:ajaxformloop t:id="categories" source="categories" value="category" encoder="categoryEncoder">
+								<div class="form-group">
+									<div class="input-group">
+										<t:textfield t:id="label" value="category.label" t:mixins="autocomplete" minChars="0"/>
+										<span class="input-group-btn"><button t:type="removerowlink" class="btn btn-default"><span class="fa fa-times"></span></button></span>
+									</div>
 								</div>
-							</div>
-						</t:ajaxformloop>
-						<p>
-							<input class="btn" type="submit" value="Mettre à jour" />
-							<button class="btn" type="submit">Supprimer</button>
-						</p>
-					</t:form>
-				</t:if>
+							</t:ajaxformloop>
+							<p>
+								<input class="btn" type="submit" value="Mettre à jour" />
+								<button class="btn" type="submit">Supprimer</button>
+							</p>
+						</t:form>
+					</t:if>
+				</t:zone>
 			</t:zone>
 		</p:content>
 	</t:dialog>

@@ -123,7 +123,7 @@ public class Index {
 			{
 				add(new CompteQualite() {
 					{
-						setIdentifiant("Compte qualit� (1)");
+						setIdentifiant("Compte qualite (1)");
 						setRapports(new ArrayList<Rapport>() {
 							{
 								add(new Rapport() {
@@ -138,7 +138,7 @@ public class Index {
 				});
 				add(new CompteQualite() {
 					{
-						setIdentifiant("Compte qualit� (2)");
+						setIdentifiant("Compte qualite (2)");
 					}
 				});
 			}
@@ -160,7 +160,7 @@ public class Index {
 								add(new Rapport() {
 									{
 										setIdentifiant("RPO(1.1)");
-										setType("	Rapport pour observations");
+										setType("Rapport pour observations");
 									}
 								});
 								add(new Rapport() {

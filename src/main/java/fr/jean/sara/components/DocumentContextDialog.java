@@ -1,30 +1,36 @@
 package fr.jean.sara.components;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
-import org.apache.tapestry5.Block;
+import org.apache.commons.collections.ListUtils;
+import org.apache.commons.collections.Transformer;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.tapestry5.ValueEncoder;
+import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectComponent;
-import org.apache.tapestry5.annotations.Log;
-import org.apache.tapestry5.annotations.PageActivationContext;
+import org.apache.tapestry5.annotations.Mixins;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.Request;
-import org.eclipse.jetty.util.ajax.JSON;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import fr.jean.sara.entities.Category;
+import fr.jean.sara.entities.CompteQualite;
 import fr.jean.sara.entities.Demarche;
+import fr.jean.sara.entities.Perimetre;
 import fr.jean.sara.entities.Tracabilite;
+import fr.jean.sara.entities.Visite;
 import fr.jean.sara.services.DemarcheService;
 
 public class DocumentContextDialog {
@@ -64,6 +70,9 @@ public class DocumentContextDialog {
 
 	@InjectComponent
 	private Zone formzone;
+	
+	@InjectComponent
+	private Zone contextzonemodal;
 
 	@Inject
 	private Session session;
@@ -74,9 +83,13 @@ public class DocumentContextDialog {
 	@Property
 	@Persist
 	private List<Category> categories;
-	
+
 	@Property
 	private String format = "dd/MM/yyyy";
+	
+	@Component(parameters={"Autocomplete.minChars=0"})
+	//@Mixins({"Autocomplete"})
+	private TextField label;
 
 	@SetupRender
 	void loadDocumentContext() {
@@ -101,13 +114,14 @@ public class DocumentContextDialog {
 		}
 		logger.info("categories " + documentContext.getCategories());
 		session.save(documentContext);
-		return request.isXHR() ? formzone.getBody() : null;
+		loadDocumentContext();
+		return contextzonemodal.getBody();
 	}
 
 	Object onFailure() {
 		return request.isXHR() ? formzone.getBody() : null;
 	}
-	
+
 	public boolean getShowForm() {
 		return categories != null;
 	}
@@ -121,19 +135,54 @@ public class DocumentContextDialog {
 	void onRemoveRowFromCategories(Category category) {
 		categories.set(categories.indexOf(category), null);
 	}
-	
+
 	public Object onEditTracabilite(int id) {
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		categories = new ArrayList<Category>(documentContext.getCategories());
 		return formzone.getBody();
 	}
-	
+
 	public Object onNewTracabilite() {
 		categories = new ArrayList<Category>();
 		documentContext = new Tracabilite();
+		documentContext.setDate(new Date());
 		return formzone.getBody();
 	}
 	
+	private static final String PERIMETRE = "Tous périmètres";  
+	private static final String COMPTEQUATLITE = "Tous comptes qualités";  
+	private static final String VISITE = "Toutes visites";  
+
+	String[] onProvideCompletionsFromLabel(String input) {
+		logger.info("input " + input);
+		if (StringUtils.isEmpty(input)) {
+			return new String[]{PERIMETRE, COMPTEQUATLITE, VISITE};
+		}
+		input = StringUtils.stripAccents(input.toLowerCase());
+		List<String> result = new ArrayList<String>(); 
+		demarche = service.get(demarche.getId(), session);
+		for (Perimetre p : demarche.getPerimetres()) {
+			if (StringUtils.stripAccents(p.getNom().toLowerCase()).contains(input)) {
+				logger.info("autocomplete " + p.getNom() + " " + input + " " + p.getNom().contains(input));
+				result.add(p.getNom());
+			}
+		}
+		for (CompteQualite p : demarche.getCompteQualites()) {
+			if (StringUtils.stripAccents(p.getIdentifiant().toLowerCase()).contains(input)) {
+				logger.info("autocomplete " + p.getIdentifiant());
+				result.add(p.getIdentifiant());
+			}
+		}
+		for (Visite p : demarche.getVisites()) {
+			if (StringUtils.stripAccents(p.getIdentifiant().toLowerCase()).contains(input)); {
+				logger.info("autocomplete " + p.getIdentifiant());
+				result.add(p.getIdentifiant());
+			}
+		}
+		logger.info("autocomplete " + result.size());
+		return result.toArray(new String[result.size()]);
+	}
+
 	@Property
 	private ValueEncoder<Category> categoryEncoder = new ValueEncoder<Category>() {
 		@Override
