@@ -68,8 +68,15 @@
 								</div>
 							</t:ajaxformloop>
 							<p>
-								<input class="btn" type="submit" value="Mettre à jour" />
-								<button class="btn" type="submit">Supprimer</button>
+								<t:if test="isNew">
+									<input class="btn btn-success" type="submit" value="Ajouter" />
+									<button event="annulerTracabilite" t:id="annulerTracabilite" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
+								</t:if>
+								<t:if test="isNotNew">
+									<input class="btn btn-success" type="submit" value="Mettre à jour" />
+									<button event="annulerTracabilite" t:id="annulerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" class="btn">Annuler</button>
+									<button event="supprimerTracabilite" t:id="supprimerTracabiliteNotNew" zone="contextzonemodal" t:type="eventlink" context="documentContext.id"  class="btn btn-danger">Supprimer</button>
+								</t:if>
 							</p>
 						</t:form>
 					</t:if>

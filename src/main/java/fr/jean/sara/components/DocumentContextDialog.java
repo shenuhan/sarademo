@@ -87,6 +87,10 @@ public class DocumentContextDialog {
 	@Property
 	private String format = "dd/MM/yyyy";
 	
+	@Property
+	@Persist
+	private boolean isNew;
+	
 	@Component(parameters={"Autocomplete.minChars=0"})
 	//@Mixins({"Autocomplete"})
 	private TextField label;
@@ -142,16 +146,36 @@ public class DocumentContextDialog {
 	}
 
 	public Object onEditTracabilite(int id) {
+		isNew = false;
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		categories = new ArrayList<Category>(documentContext.getCategories());
 		return formzone.getBody();
 	}
 
 	public Object onNewTracabilite() {
+		isNew = true;
 		categories = new ArrayList<Category>();
 		documentContext = new Tracabilite();
 		documentContext.setDate(new Date());
 		return formzone.getBody();
+	}
+
+	@CommitAfter
+	public Object onSupprimerTracabilite(int id) {
+		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
+		session.delete(documentContext);
+		loadDocumentContext();
+		return contextzonemodal.getBody();
+	}
+	
+	public Object onAnnulerTracabilite() {
+		
+		loadDocumentContext();
+		return contextzonemodal.getBody();
+	}
+	
+	public boolean getIsNotNew() {
+		return !isNew;
 	}
 	
 	private static final String PERIMETRE = "Tous périmètres";  
