@@ -112,8 +112,13 @@ public class DocumentContextDialog {
 				c.setTracabilite(documentContext);
 			}
 		}
-		logger.info("categories " + documentContext.getCategories());
-		session.save(documentContext);
+		logger.info("id " + documentContext.getId());
+		
+		if (documentContext.getId() == 0) {
+			session.save(documentContext);
+		} else {
+			session.update(documentContext);
+		}
 		loadDocumentContext();
 		return contextzonemodal.getBody();
 	}

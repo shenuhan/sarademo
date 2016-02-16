@@ -47,6 +47,11 @@
 							<t:errors />
 	
 							<t:beaneditor object="documentContext">
+								<p:id>
+									<div style="display:none;">
+										<t:textfield t:id="id" value="documentContext.id" />
+									</div>
+								</p:id>
 								<p:contenu>
 									<t:label for="contenu" />
 									<t:textarea t:id="contenu" value="documentContext.contenu" />
