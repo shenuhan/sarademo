@@ -10,6 +10,9 @@ public class Category extends BasicEntity {
 	@ManyToOne
 	private Tracabilite tracabilite;
 	
+	@javax.persistence.Transient
+	private int index;
+	
 	public String getLabel() {
 		return label;
 	}
@@ -24,5 +27,13 @@ public class Category extends BasicEntity {
 
 	public void setTracabilite(Tracabilite tracabilite) {
 		this.tracabilite = tracabilite;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 }

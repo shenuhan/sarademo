@@ -3,12 +3,15 @@ package fr.jean.sara.components;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.annotations.AfterRender;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
@@ -18,7 +21,6 @@ import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
-import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.ajax.AjaxResponseRenderer;
 import org.apache.tapestry5.services.ajax.JavaScriptCallback;
 import org.apache.tapestry5.services.javascript.JavaScriptSupport;
@@ -62,9 +64,6 @@ public class DocumentContextDialog {
 	@Parameter(required = true)
 	private int demarcheid;
 
-	@Inject
-	private Request request;
-
 	@InjectComponent
 	private Form ajaxForm;
 
@@ -100,8 +99,17 @@ public class DocumentContextDialog {
 		logger.info("demarch id" + demarcheid);
 		demarche = service.get(demarcheid, session);
 		documentContexts = service.getDocumentContexts(demarcheid, session);
-		categories = null;
 	}
+ 
+    /**
+     * Do the cross-field validation
+     */
+	@OnEvent(value=EventConstants.VALIDATE)
+    void validateCatégories() {
+        if (categories.isEmpty()) {
+            ajaxForm.recordError("Selectionner au moins une catégorie.");
+        }
+    }
 
 	@CommitAfter
 	void onSuccess() {
@@ -124,11 +132,12 @@ public class DocumentContextDialog {
 			session.update(documentContext);
 		}
 		loadDocumentContext();
+		categories = null;
 		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
 			
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/contextModal").invoke("search");					
+				javascriptSupport.require("filter/contextModal").invoke("search");
 			}
 		});
 	}
@@ -142,8 +151,16 @@ public class DocumentContextDialog {
 		js.require("filter/contextModal").invoke("search");
 	}
 
-	Object onFailure() {
-		return request.isXHR() ? formzone.getBody() : null;
+	void onFailure() {
+		logger.info("Failure");
+		loadDocumentContext();
+		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
+			@Override
+			public void run(JavaScriptSupport javascriptSupport) {
+				javascriptSupport.require("filter/contextModal").invoke("search");
+				javascriptSupport.require("filter/contextModal").invoke("formVisible").with(true);	
+			}
+		});
 	}
 
 	public boolean getShowForm() {
@@ -152,13 +169,43 @@ public class DocumentContextDialog {
 
 	Object onAddRowFromCategories() {
 		Category c = new Category();
+		c.setIndex(categories.isEmpty() ? 1 : (categories.get(categories.size() - 1).getIndex() + 1));
 		categories.add(c);
+		logger.info("add " + c.getIndex() + " " + categories.size());
 		return c;
 	}
 
-	void onRemoveRowFromCategories(Category category) {
-		categories.set(categories.indexOf(category), null);
+	void onRemoveRowFromCategories(final Category category) {
+		categories.removeIf(new Predicate<Category>() {
+			@Override
+			public boolean test(Category t) {
+				return category.getIndex()==t.getIndex();
+			}
+			
+		});
+		logger.info("remove " + category.getIndex() + " " + categories.size());
 	}
+
+	@Property
+	private ValueEncoder<Category> categoryEncoder = new ValueEncoder<Category>() {
+		@Override
+		public String toClient(Category value) {
+			logger.info("toclient " + categories.indexOf(value) + " " + categories.size());
+			return String.valueOf(value.getIndex());
+		}
+
+		@Override
+		public Category toValue(final String clientValue) {
+			logger.info("toValue " + clientValue + " " + categories.size());
+			return categories.stream().filter(new Predicate<Category>() {
+				@Override
+				public boolean test(Category t) {
+					return clientValue.equals(String.valueOf(t.getIndex()));
+				}
+				
+			}).findFirst().get();
+		}
+	};
 
 	public void onEditTracabilite(final int id) {
 		isNew = false;
@@ -181,9 +228,8 @@ public class DocumentContextDialog {
 		ajaxResponseRenderer.addRender(formzone).addCallback(new JavaScriptCallback() {
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/contextModal")
-					.invoke("activateResult")	
-					.invoke("formVisible").with(true);
+				javascriptSupport.require("filter/contextModal").invoke("activateResult");
+				javascriptSupport.require("filter/contextModal").invoke("formVisible").with(true);
 			}
 		});
 	}
@@ -196,27 +242,27 @@ public class DocumentContextDialog {
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		session.delete(documentContext);
 		loadDocumentContext();
+		categories = null;
 		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/contextModal")
-					.invoke("search")
-					.invoke("activateResult")
-					.invoke("formVisible").with(false);
+				javascriptSupport.require("filter/contextModal").invoke("search");
+				javascriptSupport.require("filter/contextModal").invoke("activateResult");
+				javascriptSupport.require("filter/contextModal").invoke("formVisible").with(false);
 			}
 		});
 	}
 	
 	public void onAnnulerTracabilite() {
 		loadDocumentContext();
+		categories = null;
 		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
 			
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
-				javascriptSupport.require("filter/contextModal")
-					.invoke("search")
-					.invoke("activateResult")
-					.invoke("formVisible").with(false);
+				javascriptSupport.require("filter/contextModal").invoke("search");
+				javascriptSupport.require("filter/contextModal").invoke("activateResult");
+				javascriptSupport.require("filter/contextModal").invoke("formVisible").with(false);
 			}
 		});
 	}
@@ -259,20 +305,6 @@ public class DocumentContextDialog {
 		return result.toArray(new String[result.size()]);
 	}
 
-	@Property
-	private ValueEncoder<Category> categoryEncoder = new ValueEncoder<Category>() {
-		@Override
-		public String toClient(Category value) {
-			logger.info("toclient " + categories.indexOf(value) + " " + categories.size());
-			return String.valueOf(categories.indexOf(value));
-		}
-
-		@Override
-		public Category toValue(String clientValue) {
-			logger.info("toValue " + clientValue + " " + categories.size());
-			return categories.get(Integer.parseInt(clientValue));
-		}
-	};
 
 	public boolean getIsFirst() {
 		return index == 0;

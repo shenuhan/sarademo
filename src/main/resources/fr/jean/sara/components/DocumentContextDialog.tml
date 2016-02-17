@@ -65,6 +65,7 @@
 									</p:contenu>
 								</t:beaneditor>
 							
+								
 								<label>Catégories</label>
 								<t:ajaxformloop t:id="categories" source="categories" value="category" encoder="categoryEncoder">
 									<div class="form-group">
