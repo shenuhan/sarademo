@@ -26,10 +26,6 @@ h1, h2 {
 	display: inline-block;
 }
 
-.search-results.form-visible {
-	max-width: 500px;
-}
-
 #formzone {
 	padding: 0 15px;
 	vertical-align: top;

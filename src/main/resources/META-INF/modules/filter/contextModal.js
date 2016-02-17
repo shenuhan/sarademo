@@ -40,6 +40,24 @@ define(
 					$('#search-result-' + id).addClass('active');
 				}
 			};
+			
+			var computeSize = function() {
+				var results = $('.search-results');
+				if (results.hasClass('form-visible')) {
+					var available = $('.context-body').width();
+					if (available > 850) {
+						results.css({width:"470px"});
+						$('#formzone').css({width:(available - 500) + "px"});
+					} else {
+						results.css({width:"100%"});
+						$('#formzone').css({width:"100%"});
+					}
+				} else {
+					results.css({width:"100%"});
+				}
+			}
+			$( window ).off('resize');
+			$( window ).resize(computeSize);
 
 			formVisible = function(visible) {
 				if (visible) {
@@ -48,10 +66,18 @@ define(
 						showMeridian: false,
 						disableFocus: true
 					});
+					computeSize();
+					if ($('.search-results').css('width') == '100%') {
+						$('#documentContextDialog').animate({
+					        scrollTop: $("#formzone").offset().top
+					    }, 200);
+					}
 				} else {
 					$('.search-results').removeClass('form-visible');
 					$('.search-results').css({maxWidth:"", width:""});
+					computeSize();
 				}
+				
 			};
 
 			return {
