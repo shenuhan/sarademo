@@ -105,9 +105,9 @@ public class DocumentContextDialog {
      * Do the cross-field validation
      */
 	@OnEvent(value=EventConstants.VALIDATE)
-    void validateCatégories() {
+    void validateCategories() {
         if (categories.isEmpty()) {
-            ajaxForm.recordError("Selectionner au moins une catégorie.");
+            ajaxForm.recordError("Selectionner au moins une categorie.");
         }
     }
 
