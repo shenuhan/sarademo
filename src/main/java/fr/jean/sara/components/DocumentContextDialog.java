@@ -4,8 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
-import java.util.function.Predicate;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.tapestry5.EventConstants;
@@ -193,13 +193,13 @@ public class DocumentContextDialog {
 	}
 
 	void onRemoveRowFromCategories(final Category category) {
-		categories.removeIf(new Predicate<Category>() {
-			@Override
-			public boolean test(Category t) {
-				return category.getIndex()==t.getIndex();
+		for (Iterator<Category> it = categories.iterator(); it.hasNext(); ) {
+			Category t = it.next();
+			if (category.getIndex()==t.getIndex()) {
+				it.remove();
 			}
-			
-		});
+		}
+
 		logger.info("remove " + category.getIndex() + " " + categories.size());
 	}
 
@@ -214,13 +214,12 @@ public class DocumentContextDialog {
 		@Override
 		public Category toValue(final String clientValue) {
 			logger.info("toValue " + clientValue + " " + categories.size());
-			return categories.stream().filter(new Predicate<Category>() {
-				@Override
-				public boolean test(Category t) {
-					return clientValue.equals(String.valueOf(t.getIndex()));
+			for (Iterator<Category> it = categories.iterator(); it.hasNext(); ) {
+				Category t = it.next();
+				if (clientValue.equals(String.valueOf(t.getIndex()))) {
+					return t;
 				}
-				
-			}).findFirst().get();
+			}
 		}
 	};
 
