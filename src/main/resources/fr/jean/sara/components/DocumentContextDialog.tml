@@ -34,7 +34,7 @@
 											</div>
 										</div>
 										<div class="right">
-											<div class="t-source">
+											<div class="t-source">	
 												Source: ${current.source}
 											</div>
 											<div class="t-categories">
@@ -78,8 +78,12 @@
 											<t:label for="date" />
 										    <t:datefield t:id="date" value="documentContext.date" />
 										    <div class="input-group bootstrap-timepicker timepicker">
-									            <t:textfield t:id="time" id="timepicker" value="time"/>
-									            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									            <t:textfield t:id="time" class="form-control" id="timepicker" value="time"/>
+									            <span class="input-group-btn">
+									            	<span class="btn btn-default">
+									            		<i class="glyphicon glyphicon-time"></i>
+									            	</span>
+									            </span>
 									        </div>
 								         </div>
 									</p:date>

@@ -256,7 +256,7 @@ if (!$.timepicker) {
       var self = this;
 
       if (this.showWidgetOnAddonClick && (this.$element.parent().hasClass('input-group') && this.$element.parent().hasClass('bootstrap-timepicker'))) {
-        this.$element.parent('.input-group.bootstrap-timepicker').find('.input-group-addon').on({
+        this.$element.parent('.input-group.bootstrap-timepicker').find('.input-group-btn').on({
           'click.timepicker': $.proxy(this.showWidget, this)
         });
         this.$element.on({
