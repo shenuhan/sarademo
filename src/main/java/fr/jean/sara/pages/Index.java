@@ -37,7 +37,7 @@ import fr.jean.sara.services.DemarcheService;
  */
 @Import(module = { "bootstrap/modal", "jquery" }, stylesheet = {
 		"context:css/font-awesome.css", "context:css/bootstrap.css",
-		"context:css/demo.css" })
+		"context:css/demo.css", "context:css/bootstrap-timepicker.css" })
 public class Index {
 	@Inject
 	private Logger logger;

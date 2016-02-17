@@ -1,5 +1,7 @@
 package fr.jean.sara.components;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +18,7 @@ import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.beaneditor.Validate;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
@@ -47,6 +50,10 @@ public class DocumentContextDialog {
 
 	@Property
 	private Category category;
+
+	@Property
+	@Validate("regexp=^[012]?[0-9]:[0-5]?[0-9]$")
+	private String time;
 
 	@Property
 	@Persist
@@ -95,7 +102,12 @@ public class DocumentContextDialog {
 	private TextField label;
 
 	@SetupRender
-	void loadDocumentContext() {
+	private void init() {
+		loadDocumentContext();
+		categories = null;
+	}
+	
+	private void loadDocumentContext() {
 		logger.info("demarch id" + demarcheid);
 		demarche = service.get(demarcheid, session);
 		documentContexts = service.getDocumentContexts(demarcheid, session);
@@ -123,6 +135,11 @@ public class DocumentContextDialog {
 				documentContext.getCategories().add(c);
 				c.setTracabilite(documentContext);
 			}
+		}
+		try {
+			documentContext.setDate(formatWhole.parse(formatDate.format(documentContext.getDate()) + " " + time));
+		} catch (ParseException e) {
+			logger.error("could not handle time");
 		}
 		logger.info("id " + documentContext.getId());
 		
@@ -224,6 +241,7 @@ public class DocumentContextDialog {
 		isNew = false;
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
 		categories = new ArrayList<Category>(documentContext.getCategories());
+		time = formatTime.format(documentContext.getDate());
 		ajaxResponseRenderer.addRender(formzone).addCallback(new JavaScriptCallback() {
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
@@ -233,11 +251,15 @@ public class DocumentContextDialog {
 		});
 	}
 	
+	SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm");	
+	SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");	
+	SimpleDateFormat formatWhole = new SimpleDateFormat("dd/MM/yyyy HH:mm");	
 	public void onNewTracabilite() {
 		isNew = true;
 		categories = new ArrayList<Category>();
 		documentContext = new Tracabilite();
 		documentContext.setDate(new Date());
+		time = formatTime.format(documentContext.getDate());
 		ajaxResponseRenderer.addRender(formzone).addCallback(new JavaScriptCallback() {
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {

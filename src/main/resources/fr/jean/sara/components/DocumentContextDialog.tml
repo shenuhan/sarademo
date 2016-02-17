@@ -73,6 +73,16 @@
 								             </t:radiogroup>
 								         </div>
 									</p:impact>
+									<p:date>
+										<div class="from-group">
+											<t:label for="date" />
+										    <t:datefield t:id="date" value="documentContext.date" />
+										    <div class="input-group bootstrap-timepicker timepicker">
+									            <t:textfield t:id="time" id="timepicker" value="time"/>
+									            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+									        </div>
+								         </div>
+									</p:date>
 									<p:contenu>
 										<div class="from-group">
 											<t:label for="contenu" />
