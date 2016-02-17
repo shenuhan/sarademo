@@ -207,6 +207,19 @@ public class DocumentContextDialog {
 		}
 	};
 
+	@Property
+	private ValueEncoder<Boolean> radioEncoder = new ValueEncoder<Boolean>() {
+		@Override
+		public String toClient(Boolean value) {
+			return value ? "Oui" : "Non";
+		}
+
+		@Override
+		public Boolean toValue(final String clientValue) {
+			return clientValue.equals("Oui");
+		}
+	};
+
 	public void onEditTracabilite(final int id) {
 		isNew = false;
 		documentContext = (Tracabilite) session.get(Tracabilite.class, id);
@@ -313,4 +326,13 @@ public class DocumentContextDialog {
 	public boolean getIsNotFirst() {
 		return index != 0;
 	}
+	
+	public boolean getOui() {
+		return true;
+	}
+	public boolean getNon() {
+		return false;
+	}
+
+	
 }

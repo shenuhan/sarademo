@@ -25,6 +25,9 @@
 										<div>
 											<div class="t-title">
 												${current.titre}
+												<t:if test="current.impact">
+													<span> <i class="fa fa-exclamation-circle" style="color:#8B0000;"></i></span>
+												</t:if>
 											</div>
 											<div class="t-date">
 												<t:output format="format" value="current.date" />
@@ -59,9 +62,22 @@
 											<t:textfield t:id="id" value="documentContext.id" />
 										</div>
 									</p:id>
+									<p:impact>
+										<div class="from-group">
+											<t:label for="impact" />
+										    <t:radiogroup t:id="impact" value="documentContext.impact" encoder="radioEncoder">
+								                <t:radio t:id="oui" value="Oui"/>
+								                <t:label for="oui"/>
+								                <t:radio t:id="non" value="Non"/>
+								                <t:label for="non"/>
+								             </t:radiogroup>
+								         </div>
+									</p:impact>
 									<p:contenu>
-										<t:label for="contenu" />
-										<t:textarea t:id="contenu" value="documentContext.contenu" />
+										<div class="from-group">
+											<t:label for="contenu" />
+											<t:textarea t:id="contenu" value="documentContext.contenu" />
+										</div>
 									</p:contenu>
 								</t:beaneditor>
 							
