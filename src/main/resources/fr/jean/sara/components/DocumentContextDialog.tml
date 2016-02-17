@@ -62,6 +62,12 @@
 											<t:textfield t:id="id" value="documentContext.id" />
 										</div>
 									</p:id>
+									<p:source>
+										<div class="input-group">
+											<t:label for="source" />
+											<t:textfield t:id="source" value="documentContext.source" t:mixins="autocomplete" minChars="0"/>
+										</div>
+									</p:source>
 									<p:impact>
 										<div class="from-group">
 											<t:label for="impact" />

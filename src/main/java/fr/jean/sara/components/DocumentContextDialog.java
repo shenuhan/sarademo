@@ -151,7 +151,6 @@ public class DocumentContextDialog {
 		loadDocumentContext();
 		categories = null;
 		ajaxResponseRenderer.addRender(contextzonemodal).addCallback(new JavaScriptCallback() {
-			
 			@Override
 			public void run(JavaScriptSupport javascriptSupport) {
 				javascriptSupport.require("filter/contextModal").invoke("search");
@@ -331,13 +330,30 @@ public class DocumentContextDialog {
 			}
 		}
 		for (Visite p : demarche.getVisites()) {
-			if (StringUtils.stripAccents(p.getIdentifiant().toLowerCase()).contains(input)); {
+			if (StringUtils.stripAccents(p.getIdentifiant().toLowerCase()).contains(input)) {
 				logger.info("autocomplete " + p.getIdentifiant());
 				result.add(p.getIdentifiant());
 			}
 		}
 		logger.info("autocomplete " + result.size());
 		return result.toArray(new String[result.size()]);
+	}
+
+	String[] onProvideCompletionsFromSource(String input) {
+		logger.info("input " + input);
+		if (StringUtils.isEmpty(input)) {
+			return new String[]{};
+		}
+		input = StringUtils.stripAccents(input.toLowerCase());
+		List<String> base = session.createQuery("select distinct t.source from Tracabilite t").list(); 
+		List<String> results = new ArrayList<String>();
+		for (String p : base) {
+			if (StringUtils.stripAccents(p.toLowerCase()).contains(input)) {
+				results.add(p);
+			}
+		}
+		logger.info("" + results.size());
+		return results.toArray(new String[results.size()]);
 	}
 
 
