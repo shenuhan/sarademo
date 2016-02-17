@@ -220,6 +220,7 @@ public class DocumentContextDialog {
 					return t;
 				}
 			}
+			return null;
 		}
 	};
 
